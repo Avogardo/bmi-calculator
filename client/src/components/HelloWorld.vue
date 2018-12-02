@@ -3,6 +3,9 @@
     <h1>BMI calculator</h1>
     This is a home page.
 
+    <button @click="onClick">Button</button>
+    <a href="http://localhost:8081/auth/google">Google+</a>
+
     <h2>Example response from server:</h2>
     <div v-for="post in posts">
       <p>
@@ -30,6 +33,10 @@
         const response = await CalculatorService.fetchPosts();
         this.posts = response.data;
       },
+      async onClick () {
+        const user = await CalculatorService.fetchUser();
+        console.log(user.data);
+      }
     },
   }
 </script>
