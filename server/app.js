@@ -6,6 +6,7 @@ const passportSetup = require('./config/passport-setup');
 const cors = require('cors');
 const morgan = require('morgan');
 const mongoose = require('mongoose');
+const keys = require('./config/keys');
 
 const app = express();
 app.use(morgan('combined'));
@@ -15,7 +16,7 @@ app.use(cors());
 // set up session cookies
 app.use(cookieSession({
   maxAge: 24 * 60 * 60 * 1000, // 1 day: 24h 60min 60sec 1000milisec
-  keys: ['mycookiekey'],
+  keys: [keys.session.cookieKey],
 }));
 
 // initialize passport
@@ -54,7 +55,7 @@ app.get('/auth/logout', (req, res) => {
   // handle with passport
   req.logout();
   console.log('logout');
-  // res.redirect('/');
+  res.redirect('http://localhost:8080/');
 });
 
 // auth with google+

@@ -3,7 +3,8 @@
     <h1>BMI calculator</h1>
     This is a home page.
 
-    <button @click="onClick">Button</button>
+    <button @click="onClick">show user</button>
+    <a href="http://localhost:8081/auth/logout">Log out</a>
     <a href="http://localhost:8081/auth/google">Google+</a>
 
     <h2>Example response from server:</h2>

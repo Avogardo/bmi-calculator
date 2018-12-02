@@ -77,3 +77,4 @@ typings/
 *.iml
 *.xml
 *.xml
+server/config/keys.js
