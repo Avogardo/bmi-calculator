@@ -20,7 +20,7 @@
 <script>
   import CalculatorService from '@/services/CalculatorService'
   export default {
-    name: 'HelloWorld',
+    name: 'MainLayout',
     data () {
       return {
         posts: [],
