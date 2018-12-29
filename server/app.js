@@ -46,6 +46,9 @@ app.get('/', (req, res) => {
     [{
       title: "Hello World!",
       description: "Hi there! How are you?",
+    }, {
+      title: "Hello World!",
+      description: "Hi there! How are you?",
     }],
   );
 });
