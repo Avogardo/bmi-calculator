@@ -1,6 +1,6 @@
 <template>
   <div class="page-container">
-    <md-app>
+    <md-app class="app-wrapper">
       <md-app-toolbar class="md-primary">
         <span class="md-title">BMI calculator</span>
       </md-app-toolbar>
@@ -46,13 +46,16 @@
 
 <style lang="scss" scoped>
   .md-app {
-    max-height: 400px;
     border: 1px solid rgba(#000, .12);
   }
 
   .md-drawer {
     width: 230px;
     max-width: calc(100vw - 125px);
+  }
+
+  .app-wrapper {
+    height: 100vh;
   }
 </style>
 
