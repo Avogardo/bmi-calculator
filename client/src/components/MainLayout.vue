@@ -11,24 +11,28 @@
         </md-toolbar>
 
         <md-list>
-          <md-list-item>
-            <md-icon>move_to_inbox</md-icon>
-            <span class="md-list-item-text">Inbox</span>
-          </md-list-item>
+          <router-link v-bind:to="{ name: 'Login' }">
+            <md-list-item>
+              <md-icon>move_to_inbox</md-icon>
+              <span class="md-list-item-text">Login</span>
+            </md-list-item>
+          </router-link>
 
-          <md-list-item>
-            <md-icon>send</md-icon>
-            <span class="md-list-item-text">Sent Mail</span>
-          </md-list-item>
+          <router-link v-bind:to="{ name: 'Food' }">
+            <md-list-item>
+              <md-icon>send</md-icon>
+                <span class="md-list-item-text">Food</span>
+            </md-list-item>
+          </router-link>
 
           <md-list-item>
             <md-icon>delete</md-icon>
-            <span class="md-list-item-text">Trash</span>
+            <span class="md-list-item-text">Calculator</span>
           </md-list-item>
 
           <md-list-item>
             <md-icon>error</md-icon>
-            <span class="md-list-item-text">Spam</span>
+            <span class="md-list-item-text">Charts</span>
           </md-list-item>
         </md-list>
       </md-app-drawer>
@@ -46,7 +50,6 @@
     border: 1px solid rgba(#000, .12);
   }
 
-  // Demo purposes only
   .md-drawer {
     width: 230px;
     max-width: calc(100vw - 125px);
