@@ -7,6 +7,7 @@ const cors = require('cors');
 const morgan = require('morgan');
 const mongoose = require('mongoose');
 const keys = require('./config/keys');
+const Food = require("./models/food-model");
 
 const app = express();
 app.use(morgan('combined'));
