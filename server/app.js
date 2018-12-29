@@ -91,7 +91,25 @@ mongoose.connect(
   },
 );
 
-
 app.listen(process.env.PORT || 8081, () => {
   console.log('app now listening for requests on port 8081');
+});
+
+// Add new post
+app.post('/food', (req, res) => {
+  const { name, description } = req.body;
+  const newPost = new Post({
+    name,
+    description,
+  });
+
+  newPost.save((error) => {
+    if (error) {
+      console.log(error)
+    }
+    res.send({
+      success: true,
+      message: 'Food saved successfully!'
+    });
+  });
 });

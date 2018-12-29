@@ -4,6 +4,9 @@ export default {
   fetchPosts () {
     return Api().get('/');
   },
+  addFood (params) {
+    return Api().post('food', params)
+  },
   login () {
     return Api().get('/auth/google');
   },

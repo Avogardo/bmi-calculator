@@ -31,7 +31,7 @@
         </md-table-cell>
       </md-table-row>
     </md-table>
-    <md-button class="md-raised md-primary">Add</md-button>
+    <md-button class="md-raised md-primary" @click="onAdd">Add</md-button>
   </div>
 </template>
 
@@ -55,24 +55,26 @@
       this.getPosts();
     },
     methods: {
-      async getPosts () {
+      async getPosts() {
         const response = await CalculatorService.fetchPosts();
         this.posts = response.data;
       },
-      async onClick () {
+      async onClick() {
         const user = await CalculatorService.fetchUser();
         console.log(user.data);
       },
-      onSelect (items) {
+      onSelect(items) {
         this.selected = items;
       },
-      getAlternateLabel (count) {
+      getAlternateLabel(count) {
         let plural = '';
-
         if (count > 1) {
           plural = 's';
         }
         return `${count} user${plural} selected`;
+      },
+      onAdd() {
+        console.log('asd');
       },
     },
   }
