@@ -1,12 +1,16 @@
 <template>
   <div id="app">
-    <router-view/>
+    <MainLayout />
   </div>
 </template>
 
 <script>
+  import MainLayout from '@/components/MainLayout';
   export default {
     name: 'App',
+    components : {
+      'MainLayout': MainLayout
+    }
   }
 </script>
 

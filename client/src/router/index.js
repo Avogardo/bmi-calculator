@@ -1,6 +1,6 @@
 import Vue from 'vue';
 import Router from 'vue-router';
-import MainLayout from '@/components/MainLayout';
+import Login from '@/components/Login';
 
 Vue.use(Router);
 
@@ -8,8 +8,8 @@ export default new Router({
   routes: [
     {
       path: '/',
-      name: 'MainLayout',
-      component: MainLayout,
+      name: 'Login',
+      component: Login,
     },
   ],
 });

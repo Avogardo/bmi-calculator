@@ -2,7 +2,7 @@
   <div class="page-container">
     <md-app>
       <md-app-toolbar class="md-primary">
-        <span class="md-title">My Title</span>
+        <span class="md-title">BMI calculator</span>
       </md-app-toolbar>
 
       <md-app-drawer md-permanent="full">
@@ -34,23 +34,7 @@
       </md-app-drawer>
 
       <md-app-content>
-        <div class="posts">
-          <h1>BMI calculator</h1>
-          This is a home page.
-
-          <button @click="onClick">show user</button>
-          <a href="http://localhost:8081/auth/logout">Log out</a>
-          <a href="http://localhost:8081/auth/google">Google+</a>
-
-          <h2>Example response from server:</h2>
-          <div v-for="post in posts">
-            <p>
-              <span><b>{{ post.title }}</b></span><br />
-              <span>{{ post.description }}</span>
-            </p>
-          </div>
-          <md-button class="md-raised md-primary">Primary</md-button>
-        </div>
+        <router-view/>
       </md-app-content>
     </md-app>
   </div>
@@ -70,26 +54,7 @@
 </style>
 
 <script>
-  import CalculatorService from '@/services/CalculatorService'
   export default {
     name: 'MainLayout',
-    data () {
-      return {
-        posts: [],
-      }
-    },
-    mounted () {
-      this.getPosts();
-    },
-    methods: {
-      async getPosts () {
-        const response = await CalculatorService.fetchPosts();
-        this.posts = response.data;
-      },
-      async onClick () {
-        const user = await CalculatorService.fetchUser();
-        console.log(user.data);
-      }
-    },
   }
 </script>
