@@ -47,7 +47,7 @@ app.get('/', (req, res) => {
     if (error) {
       console.error(error);
     }
-    console.log(posts);
+
     res.send({
       posts: posts
     })
@@ -110,6 +110,21 @@ app.post('/food', (req, res) => {
     res.send({
       success: true,
       message: 'Food saved successfully!',
+    });
+  });
+});
+
+// Delete a food
+app.post('/food/remove', (req, res) => {
+  const { foodIds } = req.body;
+
+  Food.remove({
+    _id: { '$in': foodIds }
+  }, function(err){
+    if (err)
+      res.send(err);
+    res.send({
+      success: true,
     });
   });
 });

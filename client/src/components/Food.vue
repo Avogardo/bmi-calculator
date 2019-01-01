@@ -11,7 +11,7 @@
         <div class="md-toolbar-section-start">{{ getAlternateLabel(count) }}</div>
 
         <div class="md-toolbar-section-end">
-          <md-button class="md-icon-button">
+          <md-button @click="onRemove()" class="md-icon-button">
             <md-icon>delete</md-icon>
           </md-button>
         </div>
@@ -92,18 +92,13 @@
     methods: {
       async getPosts() {
         const response = await CalculatorService.fetchPosts();
-        console.log(response.data);
         this.posts = response.data.posts;
       },
       onSelect(items) {
         this.selected = items;
       },
       getAlternateLabel(count) {
-        let plural = '';
-        if (count > 1) {
-          plural = 's';
-        }
-        return `${count} user${plural} selected`;
+        return `${count} food${count > 1 ? 's' : ''} selected`;
       },
       closeAddDialog() {
         this.showDialog = false;
@@ -112,6 +107,18 @@
         this.closeAddDialog();
         const response = await CalculatorService.addFood(this.foods);
         console.log(response.data);
+        if (response.data.success) {
+          this.showAddSnackbar = true;
+          await this.getPosts();
+        }
+      },
+      async onRemove() {
+        const foodIds = {
+          foodIds: this.selected.map(food => food._id),
+        };
+
+        this.selected = [];
+        const response = await CalculatorService.removeFood(foodIds);
         if (response.data.success) {
           this.showAddSnackbar = true;
           await this.getPosts();
