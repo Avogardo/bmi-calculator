@@ -11,8 +11,8 @@
     </md-field>
 
     <md-dialog-actions>
-      <md-button class="md-primary" @click="showDialog = false">Close</md-button>
-      <md-button class="md-primary" @click="showDialog = false">Save</md-button>
+      <md-button class="md-primary" @click="$emit('closeAddDialog')">Close</md-button>
+      <md-button class="md-primary" @click="$emit('closeAddDialog')">Save</md-button>
     </md-dialog-actions>
   </div>
 </template>
@@ -20,6 +20,6 @@
 <script>
   export default {
     name: "AddFood",
-    props: ['foods', 'showDialog'],
+    props: ['foods', 'showDialog', 'closeAddDialog'],
   }
 </script>

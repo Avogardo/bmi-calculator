@@ -33,7 +33,11 @@
     </md-table>
 
     <md-dialog :md-active.sync="showDialog">
-      <AddFood v-bind:showDialog="showDialog" v-bind:foods="foods" />
+      <AddFood
+        v-bind:showDialog="showDialog"
+        v-bind:foods="foods"
+        @closeAddDialog="closeAddDialog()"
+      />
     </md-dialog>
 
     <md-button class="md-primary md-raised" @click="showDialog = true">
@@ -89,6 +93,9 @@
           plural = 's';
         }
         return `${count} user${plural} selected`;
+      },
+      closeAddDialog() {
+        this.showDialog = false;
       },
       onAdd() {
         console.log('asd');
