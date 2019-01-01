@@ -1,6 +1,17 @@
-import axios from 'axios'
+import axios from 'axios';
 
-export default() => axios.create({
+const userApi = () => axios.create({
   baseURL: `http://localhost:8081`,
   withCredentials: true,
 });
+
+const foodApi = () => axios.create({
+  baseURL: `http://localhost:8081`,
+});
+
+const api = {
+  userApi,
+  foodApi,
+};
+
+export default api;

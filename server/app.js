@@ -98,14 +98,14 @@ app.listen(process.env.PORT || 8081, () => {
 // Add new post
 app.post('/food', (req, res) => {
   const { name, description } = req.body;
-  const newPost = new Post({
+  const newPost = new Food({
     name,
     description,
   });
 
   newPost.save((error) => {
     if (error) {
-      console.log(error)
+      console.log(error);
     }
     res.send({
       success: true,

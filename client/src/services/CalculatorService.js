@@ -1,16 +1,16 @@
-import Api from '@/services/Api'
+import api from '@/services/Api'
 
 export default {
   fetchPosts () {
-    return Api().get('/');
+    return api.foodApi().get('/');
   },
   addFood (params) {
-    return Api().post('food', params)
+    return api.foodApi().post('food', params)
   },
   login () {
-    return Api().get('/auth/google');
+    return api.userApi().get('/auth/google');
   },
   fetchUser () {
-    return Api().get('/user');
+    return api.userApi().get('/user');
   },
 }

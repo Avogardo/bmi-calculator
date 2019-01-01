@@ -97,9 +97,11 @@
       closeAddDialog() {
         this.showDialog = false;
       },
-      onAdd() {
+      async onAdd() {
         this.closeAddDialog();
         console.log(this.foods);
+        const response = await CalculatorService.addFood(this.foods);
+        console.log(response);
       },
     },
   }
