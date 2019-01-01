@@ -25,6 +25,13 @@
             </md-list-item>
           </router-link>
 
+          <router-link v-bind:to="{ name: 'Dishes' }">
+            <md-list-item>
+              <md-icon>send</md-icon>
+              <span class="md-list-item-text">My dishes</span>
+            </md-list-item>
+          </router-link>
+
           <md-list-item>
             <md-icon>delete</md-icon>
             <span class="md-list-item-text">Calculator</span>

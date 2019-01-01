@@ -8,6 +8,8 @@ const morgan = require('morgan');
 const mongoose = require('mongoose');
 const keys = require('./config/keys');
 const Food = require("./models/food-model");
+const Dish = require("./models/dish-model");
+const User = require("./models/user-model");
 
 const app = express();
 app.use(morgan('combined'));
@@ -119,6 +121,69 @@ app.post('/food/remove', (req, res) => {
   const { foodIds } = req.body;
 
   Food.remove({
+    _id: { '$in': foodIds }
+  }, function(err){
+    if (err)
+      res.send(err);
+    res.send({
+      success: true,
+    });
+  });
+});
+
+app.get('/dishes', (req, res) => {
+  Dish.find({ _id : req.user._id }, 'name description', function (error, posts) {
+    if (error) {
+      console.error(error);
+    }
+
+    res.send({
+      posts: posts
+    })
+  }).sort({_id:-1})
+});
+
+app.put('/dishes', (req, res) => {
+  const { id, name, foodsIds } = req.body;
+  console.log(req.user, req.body);
+
+  const newDish = new Dish({
+    id,
+    name,
+    foodsIds,
+  });
+
+  newDish.save((error) => {
+    if (error) {
+      console.log(error);
+    }
+    res.send({
+      success: true,
+      message: 'Food saved successfully!',
+    });
+  });
+
+  User.findById(req.user._id, (error, user) => {
+    if (error) {
+      console.error(error);
+    }
+
+    user.dishes.push(id);
+    user.save((error) => {
+      if (error) {
+        console.log(error);
+      }
+      res.send({
+        success: true,
+      });
+    });
+  });
+});
+
+app.post('/dishes/remove', (req, res) => {
+  const { foodIds } = req.body;
+
+  Dish.remove({
     _id: { '$in': foodIds }
   }, function(err){
     if (err)
