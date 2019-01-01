@@ -9,8 +9,8 @@
   export default {
     name: 'App',
     components: {
-      'MainLayout': MainLayout
-    }
+      'MainLayout': MainLayout,
+    },
   }
 </script>
 

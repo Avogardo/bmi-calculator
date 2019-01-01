@@ -12,7 +12,7 @@
 
     <md-dialog-actions>
       <md-button class="md-primary" @click="$emit('closeAddDialog')">Close</md-button>
-      <md-button class="md-primary" @click="$emit('closeAddDialog')">Save</md-button>
+      <md-button class="md-primary" @click="$emit('onAdd')">Save</md-button>
     </md-dialog-actions>
   </div>
 </template>

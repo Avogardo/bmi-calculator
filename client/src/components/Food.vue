@@ -37,6 +37,7 @@
         v-bind:showDialog="showDialog"
         v-bind:foods="foods"
         @closeAddDialog="closeAddDialog()"
+        @onAdd="onAdd()"
       />
     </md-dialog>
 
@@ -69,7 +70,10 @@
         selected: [],
         posts: [],
         showDialog: false,
-        foods: {},
+        foods: {
+          name: '',
+          description: '',
+        },
       }
     },
     mounted () {
@@ -79,10 +83,6 @@
       async getPosts() {
         const response = await CalculatorService.fetchPosts();
         this.posts = response.data;
-      },
-      async onClick() {
-        const user = await CalculatorService.fetchUser();
-        console.log(user.data);
       },
       onSelect(items) {
         this.selected = items;
@@ -98,7 +98,8 @@
         this.showDialog = false;
       },
       onAdd() {
-        console.log('asd');
+        this.closeAddDialog();
+        console.log(this.foods);
       },
     },
   }
