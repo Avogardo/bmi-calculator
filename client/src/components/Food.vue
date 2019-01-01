@@ -31,7 +31,14 @@
         </md-table-cell>
       </md-table-row>
     </md-table>
-    <md-button class="md-raised md-primary" @click="onAdd">Add</md-button>
+
+    <md-dialog :md-active.sync="showDialog">
+      <AddFood v-bind:showDialog="showDialog" v-bind:foods="foods" />
+    </md-dialog>
+
+    <md-button class="md-primary md-raised" @click="showDialog = true">
+      Show Dialog
+    </md-button>
   </div>
 </template>
 
@@ -39,16 +46,26 @@
   .md-table + .md-table {
     margin-top: 16px
   }
+
+  .md-dialog {
+    max-width: 768px;
+  }
 </style>
 
 <script>
   import CalculatorService from '@/services/CalculatorService'
+  import AddFood from '@/components/AddFood';
   export default {
     name: 'Food',
+    components: {
+      'AddFood': AddFood,
+    },
     data () {
       return {
         selected: [],
         posts: [],
+        showDialog: false,
+        foods: {},
       }
     },
     mounted () {

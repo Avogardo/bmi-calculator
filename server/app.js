@@ -109,7 +109,7 @@ app.post('/food', (req, res) => {
     }
     res.send({
       success: true,
-      message: 'Food saved successfully!'
+      message: 'Food saved successfully!',
     });
   });
 });
