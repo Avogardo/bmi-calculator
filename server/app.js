@@ -43,15 +43,15 @@ app.use(function (req, res, next) {
 });
 
 app.get('/', (req, res) => {
-  res.send(
-    [{
-      title: "Hello World!",
-      description: "Hi there! How are you?",
-    }, {
-      title: "Hello World!",
-      description: "Hi there! How are you?",
-    }],
-  );
+  Food.find({}, 'name description', function (error, posts) {
+    if (error) {
+      console.error(error);
+    }
+    console.log(posts);
+    res.send({
+      posts: posts
+    })
+  }).sort({_id:-1})
 });
 
 // auth logout
@@ -95,7 +95,7 @@ app.listen(process.env.PORT || 8081, () => {
   console.log('app now listening for requests on port 8081');
 });
 
-// Add new post
+// Add new food
 app.post('/food', (req, res) => {
   const { name, description } = req.body;
   const newPost = new Food({
