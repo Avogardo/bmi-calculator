@@ -3,6 +3,7 @@ const Schema = mongoose.Schema;
 
 const DishSchema = new Schema({
   name: String,
+  ownerId: String,
   dishesIds: { type: [String], default: [] },
 });
 

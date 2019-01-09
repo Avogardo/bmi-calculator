@@ -122,7 +122,7 @@ app.post('/food/remove', (req, res) => {
 
   Food.remove({
     _id: { '$in': foodIds }
-  }, function(err){
+  }, (err) => {
     if (err)
       res.send(err);
     res.send({
@@ -132,25 +132,34 @@ app.post('/food/remove', (req, res) => {
 });
 
 app.get('/dishes', (req, res) => {
-  Dish.find({ _id : req.user._id }, 'name description', function (error, posts) {
-    if (error) {
-      console.error(error);
-    }
+  const { user } = req;
 
+  if (user) {
+    Dish.find({ _id: req.user._id }, 'name description', (error, posts) => {
+      if (error) {
+        console.error(error);
+      }
+
+      res.send({
+        posts: posts,
+      })
+    }).sort({ _id: -1 });
+  } else {
     res.send({
-      posts: posts
-    })
-  }).sort({_id:-1})
+      posts: [],
+    });
+  }
 });
 
 app.put('/dishes', (req, res) => {
-  const { id, name, foodsIds } = req.body;
+  const { id, name, dishesIds } = req.body;
   console.log(req.user, req.body);
 
   const newDish = new Dish({
     id,
+    ownerId: req.user._id,
     name,
-    foodsIds,
+    dishesIds,
   });
 
   newDish.save((error) => {
@@ -162,22 +171,6 @@ app.put('/dishes', (req, res) => {
       message: 'Food saved successfully!',
     });
   });
-
-  User.findById(req.user._id, (error, user) => {
-    if (error) {
-      console.error(error);
-    }
-
-    user.dishes.push(id);
-    user.save((error) => {
-      if (error) {
-        console.log(error);
-      }
-      res.send({
-        success: true,
-      });
-    });
-  });
 });
 
 app.post('/dishes/remove', (req, res) => {
@@ -185,9 +178,11 @@ app.post('/dishes/remove', (req, res) => {
 
   Dish.remove({
     _id: { '$in': foodIds }
-  }, function(err){
-    if (err)
+  }, (err) => {
+    if (err) {
       res.send(err);
+    }
+
     res.send({
       success: true,
     });
