@@ -1,13 +1,22 @@
 <template>
   <div class="posts">
-    <h1>Food</h1>
+    <h1 v-if="!isAddDishMode">Food</h1>
 
     <md-table v-model="posts" md-card @md-selected="onSelect">
       <md-table-toolbar>
-        <h2 class="md-title">There is your food collection.</h2>
+        <h2 class="md-title">{{
+          isAddDishMode ?
+            'Select foods for the dish to add'
+            :
+            'There is your food collection.'
+        }}</h2>
       </md-table-toolbar>
 
-      <md-table-toolbar slot="md-table-alternate-header" slot-scope="{ count }">
+      <md-table-toolbar
+        v-if="!isAddDishMode"
+        slot="md-table-alternate-header"
+        slot-scope="{ count }"
+      >
         <div class="md-toolbar-section-start">{{ getAlternateLabel(count) }}</div>
 
         <div class="md-toolbar-section-end">
@@ -41,7 +50,7 @@
       />
     </md-dialog>
 
-    <md-button class="md-primary md-raised" @click="showDialog = true">
+    <md-button v-if="!isAddDishMode" class="md-primary md-raised" @click="showDialog = true">
       Show Dialog
     </md-button>
 
@@ -71,6 +80,7 @@
   import AddFood from '@/components/AddFood';
   export default {
     name: 'Food',
+    props: ['isAddDishMode'],
     components: {
       'AddFood': AddFood,
     },
