@@ -32,10 +32,12 @@
             </md-list-item>
           </router-link>
 
-          <md-list-item>
-            <md-icon>delete</md-icon>
-            <span class="md-list-item-text">Calculator</span>
-          </md-list-item>
+          <router-link v-bind:to="{ name: 'Calculator' }">
+            <md-list-item>
+              <md-icon>delete</md-icon>
+              <span class="md-list-item-text">Calculator</span>
+            </md-list-item>
+          </router-link>
 
           <md-list-item>
             <md-icon>error</md-icon>

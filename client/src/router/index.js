@@ -3,6 +3,7 @@ import Router from 'vue-router';
 import Login from '@/components/Login';
 import Food from '@/components/Food';
 import Dishes from '@/components/Dishes';
+import Calculator from '@/components/Calculator';
 
 Vue.use(Router);
 
@@ -21,6 +22,10 @@ export default new Router({
       path: '/dishes',
       name: 'Dishes',
       component: Dishes,
+    }, {
+      path: '/calculator',
+      name: 'Calculator',
+      component: Calculator,
     },
   ],
 });
