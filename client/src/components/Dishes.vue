@@ -82,7 +82,7 @@
         showAddSnackbar: false,
         dish: {
           name: '',
-          dishesIds: [],
+          foodIds: [],
         },
       }
     },
@@ -104,6 +104,7 @@
         this.showDialog = false;
       },
       async onAdd() {
+        console.log(this.dish.name, this.dish.foodIds);
         // this.closeAddDialog();
         // const response = await CalculatorService.addDishes(this.foods);
         // console.log(response.data);

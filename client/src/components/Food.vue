@@ -80,7 +80,7 @@
   import AddFood from '@/components/AddFood';
   export default {
     name: 'Food',
-    props: ['isAddDishMode'],
+    props: ['isAddDishMode', 'dish'],
     components: {
       'AddFood': AddFood,
     },
@@ -106,6 +106,9 @@
       },
       onSelect(items) {
         this.selected = items;
+        if (this.dish && this.dish.foodIds) {
+          this.dish.foodIds = items.map(item => item.name);
+        }
       },
       getAlternateLabel(count) {
         return `${count} food${count > 1 ? 's' : ''} selected`;

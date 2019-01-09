@@ -152,14 +152,14 @@ app.get('/dishes', (req, res) => {
 });
 
 app.put('/dishes', (req, res) => {
-  const { id, name, dishesIds } = req.body;
+  const { id, name, foodIds } = req.body;
   console.log(req.user, req.body);
 
   const newDish = new Dish({
     id,
     ownerId: req.user._id,
     name,
-    dishesIds,
+    foodIds,
   });
 
   newDish.save((error) => {
