@@ -19,10 +19,28 @@
       </md-card-content>
 
       <md-card-actions>
-        <md-button>Update</md-button>
+        <md-button @click="showDialog = true">Update</md-button>
         <a href="http://localhost:8081/auth/logout"><md-button>Log out</md-button></a>
       </md-card-actions>
     </md-card>
+
+    <md-dialog :md-active.sync="showDialog">
+      <UserSettings
+        v-bind:showDialog="showDialog"
+        v-bind:userSetting="userSetting"
+        @closeAddDialog="closeAddDialog()"
+        @onSave="onSave()"
+      />
+    </md-dialog>
+
+    <md-snackbar
+      md-position="left"
+      :md-duration="3000"
+      :md-active.sync="showAddSnackbar"
+      md-persistent
+    >
+      <span>Preferences saved</span>
+    </md-snackbar>
   </div>
 </template>
 
@@ -31,12 +49,19 @@
 </style>
 
 <script>
-  import CalculatorService from '@/services/CalculatorService'
+  import CalculatorService from '@/services/CalculatorService';
+  import UserSettings from '@/components/UserSettings';
   export default {
     name: 'MyProfile',
+    components: {
+      UserSettings: UserSettings,
+    },
     data() {
       return {
         user: {},
+        showDialog: false,
+        showAddSnackbar: false,
+        userSetting: {},
       }
     },
     mounted() {
@@ -46,7 +71,19 @@
       async getUser() {
         const user = await CalculatorService.fetchUser();
         this.user = user.data.user;
+        const { gender, height, weight } = this.user;
+        this.userSetting = {
+          gender,
+          height,
+          weight,
+        };
         console.log(user.data.user);
+      },
+      onSave() {
+        console.log(this.userSetting);
+      },
+      closeAddDialog() {
+        this.showDialog = false;
       },
     },
   }

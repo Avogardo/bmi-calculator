@@ -20,6 +20,6 @@
 <script>
   export default {
     name: "AddFood",
-    props: ['foods', 'showDialog', 'closeAddDialog'],
+    props: ['foods'],
   }
 </script>

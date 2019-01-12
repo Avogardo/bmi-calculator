@@ -76,7 +76,7 @@
 </style>
 
 <script>
-  import CalculatorService from '@/services/CalculatorService'
+  import CalculatorService from '@/services/CalculatorService';
   import AddFood from '@/components/AddFood';
   export default {
     name: 'Food',
