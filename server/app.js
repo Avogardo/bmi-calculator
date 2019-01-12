@@ -77,11 +77,27 @@ app.get('/auth/google/redirect', passport.authenticate('google'), (req, res) => 
 });
 
 app.get('/user', (req, res) => {
-  console.log(req.user);
   res.send({
-      user: req.user,
-    }
-  );
+    user: req.user,
+  });
+});
+
+app.put('/user', async (req, res) => {
+  const { gender, height, weight, userId } = req.body;
+
+  try {
+    const user = await User.findById(userId);
+    user.gender = gender;
+    user.height = height;
+    user.weight = weight;
+    user.save();
+
+    res.send({
+      success: true,
+    });
+  } catch (error) {
+    res.send(error);
+  }
 });
 
 // connect to mongodb

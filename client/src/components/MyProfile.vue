@@ -77,10 +77,17 @@
           height,
           weight,
         };
-        console.log(user.data.user);
       },
-      onSave() {
-        console.log(this.userSetting);
+      async onSave() {
+        const userSetting = { ...this.userSetting };
+        userSetting.userId = this.user._id;
+        const response = await CalculatorService.updateUser(userSetting);
+
+        if (response.data.success) {
+          this.getUser();
+          this.showAddSnackbar = true;
+          this.closeAddDialog();
+        }
       },
       closeAddDialog() {
         this.showDialog = false;

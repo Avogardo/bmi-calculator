@@ -25,4 +25,7 @@ export default {
   fetchUser() {
     return api.userApi().get('/user');
   },
+  updateUser(params) {
+    return api.foodApi().put('/user', params);
+  },
 }
