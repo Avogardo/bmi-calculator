@@ -117,18 +117,27 @@ app.post('/food', (req, res) => {
 });
 
 // Delete a food
-app.post('/food/remove', (req, res) => {
-  const { foodIds } = req.body;
+app.post('/food/remove', async (req, res) => {
+  try {
+    const { foodIds } = req.body;
+    console.log(foodIds);
+    for (let i = 0; i < foodIds.length; i++) {
+      const foodId = foodIds[i];
+      const dishesWithFoodToRemove = await Dish.find({ foodIds: foodId });
 
-  Food.remove({
-    _id: { '$in': foodIds }
-  }, (err) => {
-    if (err)
-      res.send(err);
+      for (const dish of dishesWithFoodToRemove) {
+        dish.foodIds.splice(dish.foodIds.indexOf(foodId), 1);
+        await dish.save();
+      }
+    }
+
+    await Food.deleteMany({ _id: { '$in': foodIds } });
     res.send({
       success: true,
     });
-  });
+  } catch (error) {
+    res.send(error);
+  }
 });
 
 app.get('/dishes', async (req, res) => {
