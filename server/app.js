@@ -131,22 +131,33 @@ app.post('/food/remove', (req, res) => {
   });
 });
 
-app.get('/dishes', (req, res) => {
+app.get('/dishes', async (req, res) => {
   const { user } = req;
 
   if (user) {
-    Dish.find({ _id: req.user._id }, 'name description', (error, posts) => {
-      if (error) {
-        console.error(error);
-      }
+    try {
+      const dishes = await Dish.find({ ownerId: req.user._id });
+      const dishesResponse = [];
 
+      for (let i = 0; i < dishes.length; i++) {
+        const { name, foodIds } = dishes[i];
+        const foods = await Food.find({ _id: { $in: foodIds } });
+
+        dishesResponse.push({
+          name,
+          ownerName: req.user.userName,
+          foods,
+        });
+      }
       res.send({
-        posts: posts,
-      })
-    }).sort({ _id: -1 });
+        dishes: dishesResponse,
+      });
+    } catch (error) {
+      console.error(error);
+    }
   } else {
     res.send({
-      posts: [],
+      dishes: [],
     });
   }
 });

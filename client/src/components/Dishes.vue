@@ -1,8 +1,8 @@
 <template>
-  <div class="posts">
+  <div class="dishes">
     <h1>My dishes</h1>
 
-    <md-table v-model="posts" md-card @md-selected="onSelect">
+    <md-table v-model="dishes" md-card @md-selected="onSelect">
       <md-table-toolbar>
         <h2 class="md-title">There is your dishes collection.</h2>
       </md-table-toolbar>
@@ -77,7 +77,7 @@
     data () {
       return {
         selected: [],
-        posts: [],
+        dishes: [],
         showDialog: false,
         showAddSnackbar: false,
         dish: {
@@ -92,7 +92,8 @@
     methods: {
       async getDishes() {
         const response = await CalculatorService.fetchDishes();
-        this.posts = response.data.posts;
+        this.dishes = response.data.dishes;
+        console.log(this.dishes);
       },
       onSelect(items) {
         this.selected = items;
@@ -126,7 +127,7 @@
         const response = await CalculatorService.removeDishes(foodIds);
         if (response.data.success) {
           this.showAddSnackbar = true;
-          await this.getPosts();
+          await this.getDishes();
         }
       },
     },
