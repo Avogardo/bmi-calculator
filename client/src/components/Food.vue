@@ -84,7 +84,7 @@
     components: {
       'AddFood': AddFood,
     },
-    data () {
+    data() {
       return {
         selected: [],
         posts: [],
@@ -96,7 +96,7 @@
         },
       }
     },
-    mounted () {
+    mounted() {
       this.getPosts();
     },
     methods: {

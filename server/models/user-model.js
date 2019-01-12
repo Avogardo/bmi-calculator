@@ -5,7 +5,15 @@ const UserSchema = new Schema({
   userName: String,
   googleId: String,
   imageUrl: String,
-  dishes: { type: [String], default: [] },
+  gender: String,
+  height: {
+    type: Number,
+    default: 0,
+  },
+  weight: {
+    type: Number,
+    default: 0,
+  },
 });
 
 const User = mongoose.model('user', UserSchema);
