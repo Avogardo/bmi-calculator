@@ -107,7 +107,7 @@
       onSelect(items) {
         this.selected = items;
         if (this.dish && this.dish.foodIds) {
-          this.dish.foodIds = items.map(item => item.name);
+          this.dish.foodIds = items.map(item => item._id);
         }
       },
       getAlternateLabel(count) {
@@ -119,7 +119,6 @@
       async onAdd() {
         this.closeAddDialog();
         const response = await CalculatorService.addFood(this.foods);
-        console.log(response.data);
         if (response.data.success) {
           this.showAddSnackbar = true;
           await this.getPosts();

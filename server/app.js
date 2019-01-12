@@ -151,13 +151,12 @@ app.get('/dishes', (req, res) => {
   }
 });
 
-app.put('/dishes', (req, res) => {
-  const { id, name, foodIds } = req.body;
+app.post('/dishes', (req, res) => {
+  const { name, foodIds, ownerId } = req.body;
   console.log(req.user, req.body);
 
   const newDish = new Dish({
-    id,
-    ownerId: req.user._id,
+    ownerId,
     name,
     foodIds,
   });

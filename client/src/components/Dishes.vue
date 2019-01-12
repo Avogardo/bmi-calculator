@@ -51,7 +51,7 @@
       :md-active.sync="showAddSnackbar"
       md-persistent
     >
-      <span>Food added</span>
+      <span>Dish added</span>
     </md-snackbar>
   </div>
 </template>
@@ -87,10 +87,10 @@
       }
     },
     mounted () {
-      this.getPosts();
+      this.getDishes();
     },
     methods: {
-      async getPosts() {
+      async getDishes() {
         const response = await CalculatorService.fetchDishes();
         this.posts = response.data.posts;
       },
@@ -103,15 +103,19 @@
       closeAddDialog() {
         this.showDialog = false;
       },
+      async getUser() {
+        return await CalculatorService.fetchUser();
+      },
       async onAdd() {
-        console.log(this.dish.name, this.dish.foodIds);
-        // this.closeAddDialog();
-        // const response = await CalculatorService.addDishes(this.foods);
-        // console.log(response.data);
-        // if (response.data.success) {
-        //   this.showAddSnackbar = true;
-        //   await this.getPosts();
-        // }
+        const user = await this.getUser();
+        this.dish.ownerId = user.data.user._id;
+        this.closeAddDialog();
+
+        const response = await CalculatorService.addDishes(this.dish);
+        if (response.data.success) {
+          this.showAddSnackbar = true;
+          await this.getDishes();
+        }
       },
       async onRemove() {
         const foodIds = {

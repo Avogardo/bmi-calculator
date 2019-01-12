@@ -14,7 +14,7 @@ export default {
     return api.userApi().get('dishes');
   },
   addDishes(params) {
-    return api.userApi().put('dishes', params);
+    return api.foodApi().post('dishes', params);
   },
   removeDishes(params) {
     return api.foodApi().put('/dishes/remove', params);
