@@ -26,8 +26,19 @@
         <md-table-cell md-label="Name" md-sort-by="name">
           {{ item.name }}
         </md-table-cell>
-        <md-table-cell md-label="Email" md-sort-by="email">
-          {{ item.description }}
+        <md-table-cell md-label="OwnerName" md-sort-by="userName">
+          {{ item.ownerName }}
+        </md-table-cell>
+        <md-table-cell md-label="Foods" md-sort-by="foods">
+          <md-list>
+            <md-list-item v-for="food in item.foods">
+              <div class="md-list-item-text">
+                <span>{{ food.name }}</span>
+                <span>{{ food.description }}</span>
+              </div>
+            </md-list-item>
+          </md-list>
+          {{ item.ownerName }}
         </md-table-cell>
       </md-table-row>
     </md-table>
@@ -63,6 +74,14 @@
 
   .md-dialog {
     max-width: 768px;
+  }
+
+  .md-list {
+    width: 320px;
+    max-width: 100%;
+    display: inline-block;
+    vertical-align: top;
+    background-color: transparent;
   }
 </style>
 
