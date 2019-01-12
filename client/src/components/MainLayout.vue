@@ -39,6 +39,13 @@
             </md-list-item>
           </router-link>
 
+          <router-link v-bind:to="{ name: 'MyProfile' }">
+            <md-list-item>
+              <md-icon>delete</md-icon>
+              <span class="md-list-item-text">MyProfile</span>
+            </md-list-item>
+          </router-link>
+
           <md-list-item>
             <md-icon>error</md-icon>
             <span class="md-list-item-text">Charts</span>
