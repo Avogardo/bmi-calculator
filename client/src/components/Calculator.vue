@@ -11,7 +11,7 @@
       </md-card-content>
 
       <md-card-content>
-        Your daily caloric demand to keep your weight is: {{ description.neededDailyCal }}kcal.
+        Your daily caloric demand to keep your weight is: {{ description.neededDailyCal }}kcal. (you type {{ user.neededDailyCal }}kcal as your daily caloric demand
       </md-card-content>
 
       <md-card-content>
@@ -39,6 +39,9 @@
     data() {
       return {
         bmi: 0,
+        user: {
+          neededDailyCal: 0,
+        },
         description: {
           title: '',
           paragraph: '',
@@ -57,7 +60,8 @@
     methods: {
       async getUser() {
         const user = await CalculatorService.fetchUser();
-        const { height, weight, gender, age } = user.data.user;
+        this.user = user.data.user;
+        const { height, weight, gender, age } = this.user;
         const userData = {
           height,
           weight,

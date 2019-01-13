@@ -18,6 +18,26 @@
         }}
       </md-card-content>
 
+      <md-card-content>
+        <md-list>
+          <md-list-item>
+              Age: {{ user.age }}
+          </md-list-item>
+          <md-list-item>
+            Gender: {{ user.gender }}
+          </md-list-item>
+          <md-list-item>
+            Height: {{ user.height }}
+          </md-list-item>
+          <md-list-item>
+            Weight: {{ user.weight }}
+          </md-list-item>
+          <md-list-item>
+            Needed daily cal: {{ user.neededDailyCal }}
+          </md-list-item>
+        </md-list>
+      </md-card-content>
+
       <md-card-actions>
         <md-button @click="showDialog = true">Update</md-button>
         <a href="http://localhost:8081/auth/logout"><md-button>Log out</md-button></a>
@@ -59,7 +79,13 @@
     },
     data() {
       return {
-        user: {},
+        user: {
+          age: 0,
+          gender: '',
+          height: 0,
+          weight: 0,
+          neededDailyCal: 0,
+        },
         showDialog: false,
         showAddSnackbar: false,
         userSetting: {},
@@ -72,12 +98,19 @@
       async getUser() {
         const user = await CalculatorService.fetchUser();
         this.user = user.data.user;
-        const { gender, height, weight, age } = this.user;
+        const {
+          gender,
+          height,
+          weight,
+          age,
+          neededDailyCal,
+        } = this.user;
         this.userSetting = {
           gender,
           height,
           weight,
           age,
+          neededDailyCal,
         };
       },
       async onSave() {

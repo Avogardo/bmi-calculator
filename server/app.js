@@ -88,6 +88,7 @@ app.put('/user', async (req, res) => {
     height,
     weight,
     age,
+    neededDailyCal,
     userId,
   } = req.body;
 
@@ -97,6 +98,7 @@ app.put('/user', async (req, res) => {
     user.height = height;
     user.weight = weight;
     user.age = age;
+    user.neededDailyCal = neededDailyCal;
     user.save();
 
     res.send({
