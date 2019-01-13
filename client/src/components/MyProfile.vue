@@ -72,11 +72,12 @@
       async getUser() {
         const user = await CalculatorService.fetchUser();
         this.user = user.data.user;
-        const { gender, height, weight } = this.user;
+        const { gender, height, weight, age } = this.user;
         this.userSetting = {
           gender,
           height,
           weight,
+          age,
         };
       },
       async onSave() {

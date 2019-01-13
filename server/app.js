@@ -83,13 +83,20 @@ app.get('/user', (req, res) => {
 });
 
 app.put('/user', async (req, res) => {
-  const { gender, height, weight, userId } = req.body;
+  const {
+    gender,
+    height,
+    weight,
+    age,
+    userId,
+  } = req.body;
 
   try {
     const user = await User.findById(userId);
     user.gender = gender;
     user.height = height;
     user.weight = weight;
+    user.age = age;
     user.save();
 
     res.send({

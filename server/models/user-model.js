@@ -14,6 +14,10 @@ const UserSchema = new Schema({
     type: Number,
     default: 0,
   },
+  age: {
+    type: Number,
+    default: 0,
+  },
 });
 
 const User = mongoose.model('user', UserSchema);
