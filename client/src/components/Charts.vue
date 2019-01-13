@@ -19,6 +19,7 @@
 
 <script>
   import CalculatorService from '@/services/CalculatorService';
+  import getCalculateNeededDailyCal from '../helper';
 
   export default {
     name: 'Charts',
@@ -31,6 +32,7 @@
           weight: 0,
           neededDailyCal: 0,
         },
+        neededDailyCal: 0,
       };
     },
     mounted() {
@@ -40,6 +42,7 @@
       async getUser() {
         const user = await CalculatorService.fetchUser();
         this.user = user.data.user;
+        this.neededDailyCal = getCalculateNeededDailyCal(this.user);
         console.log(this.user);
       },
     },

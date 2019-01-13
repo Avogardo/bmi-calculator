@@ -33,6 +33,7 @@
 
 <script>
   import CalculatorService from '@/services/CalculatorService';
+  import getCalculateNeededDailyCal from '../helper';
 
   export default {
     name: "Calculator",
@@ -69,204 +70,13 @@
           age,
         };
         this.calculateBmi(userData);
-        this.calculateDailyNeeds(userData);
         this.calculateNutritionalValues(userData);
+        this.description.neededDailyCal = getCalculateNeededDailyCal(userData);
       },
       calculateNutritionalValues({ weight }) {
         this.description.nutritionalValues.protein = Math.round(weight / 1.5 * 10) / 10;
         this.description.nutritionalValues.carbohydrates = Math.round(weight / 4 * 10) / 10;
         this.description.nutritionalValues.fats = Math.round(weight / 1.25 * 10) / 10;
-      },
-      calculateDailyNeeds({ height, weight, gender, age }) {
-        if (gender.trim().toLowerCase() === 'male') {
-          switch (true) {
-            case (weight < 60):
-              switch (true) {
-                case (age < 35):
-                  this.description.neededDailyCal = 2500;
-                  break;
-                case (age < 55):
-                  this.description.neededDailyCal = 2300;
-                  break;
-                default:
-                  this.description.neededDailyCal = 1900;
-                  break;
-              }
-              break;
-            case (weight < 65):
-              switch (true) {
-                case (age < 35):
-                  this.description.neededDailyCal = 2600;
-                  break;
-                case (age < 55):
-                  this.description.neededDailyCal = 2400;
-                  break;
-                default:
-                  this.description.neededDailyCal = 2000;
-                  break;
-              }
-              break;
-            case (weight < 70):
-              switch (true) {
-                case (age < 35):
-                  this.description.neededDailyCal = 2750;
-                  break;
-                case (age < 55):
-                  this.description.neededDailyCal = 2500;
-                  break;
-                default:
-                  this.description.neededDailyCal = 2100;
-                  break;
-              }
-              break;
-            case (weight < 75):
-              switch (true) {
-                case (age < 35):
-                  this.description.neededDailyCal = 2900;
-                  break;
-                case (age < 55):
-                  this.description.neededDailyCal = 2600;
-                  break;
-                default:
-                  this.description.neededDailyCal = 2200;
-                  break;
-              }
-              break;
-            case (weight < 80):
-              switch (true) {
-                case (age < 35):
-                  this.description.neededDailyCal = 3000;
-                  break;
-                case (age < 55):
-                  this.description.neededDailyCal = 2700;
-                  break;
-                default:
-                  this.description.neededDailyCal = 2300;
-                  break;
-              }
-              break;
-            case (weight < 85):
-              switch (true) {
-                case (age < 35):
-                  this.description.neededDailyCal = 3200;
-                  break;
-                case (age < 55):
-                  this.description.neededDailyCal = 2800;
-                  break;
-                default:
-                  this.description.neededDailyCal = 2400;
-                  break;
-              }
-              break;
-            default:
-              switch (true) {
-                case (age < 35):
-                  this.description.neededDailyCal = 3500;
-                  break;
-                case (age < 55):
-                  this.description.neededDailyCal = 3000;
-                  break;
-                default:
-                  this.description.neededDailyCal = 2600;
-                  break;
-              }
-              break;
-          }
-        } else {
-          switch (true) {
-            case (weight < 45):
-              switch (true) {
-                case (age < 35):
-                  this.description.neededDailyCal = 1750;
-                  break;
-                case (age < 55):
-                  this.description.neededDailyCal = 1600;
-                  break;
-                default:
-                  this.description.neededDailyCal = 1600;
-                  break;
-              }
-              break;
-            case (weight < 50):
-              switch (true) {
-                case (age < 35):
-                  this.description.neededDailyCal = 1850;
-                  break;
-                case (age < 55):
-                  this.description.neededDailyCal = 1650;
-                  break;
-                default:
-                  this.description.neededDailyCal = 1500;
-                  break;
-              }
-              break;
-            case (weight < 55):
-              switch (true) {
-                case (age < 35):
-                  this.description.neededDailyCal = 1950;
-                  break;
-                case (age < 55):
-                  this.description.neededDailyCal = 1750;
-                  break;
-                default:
-                  this.description.neededDailyCal = 1550;
-                  break;
-              }
-              break;
-            case (weight < 60):
-              switch (true) {
-                case (age < 35):
-                  this.description.neededDailyCal = 2050;
-                  break;
-                case (age < 55):
-                  this.description.neededDailyCal = 1850;
-                  break;
-                default:
-                  this.description.neededDailyCal = 1600;
-                  break;
-              }
-              break;
-            case (weight < 65):
-              switch (true) {
-                case (age < 35):
-                  this.description.neededDailyCal = 2150;
-                  break;
-                case (age < 55):
-                  this.description.neededDailyCal = 1950;
-                  break;
-                default:
-                  this.description.neededDailyCal = 1650;
-                  break;
-              }
-              break;
-            case (weight < 70):
-              switch (true) {
-                case (age < 35):
-                  this.description.neededDailyCal = 2250;
-                  break;
-                case (age < 55):
-                  this.description.neededDailyCal = 2050;
-                  break;
-                default:
-                  this.description.neededDailyCal = 1700;
-                  break;
-              }
-              break;
-            default:
-              switch (true) {
-                case (age < 35):
-                  this.description.neededDailyCal = 2400;
-                  break;
-                case (age < 55):
-                  this.description.neededDailyCal = 2150;
-                  break;
-                default:
-                  this.description.neededDailyCal = 1750;
-                  break;
-              }
-              break;
-          }
-        }
       },
       calculateBmi({ height, weight }) {
         this.bmi = Math.round(weight / (height * height) * 10000 * 10) / 10;
