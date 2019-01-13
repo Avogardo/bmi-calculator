@@ -46,10 +46,12 @@
             </md-list-item>
           </router-link>
 
-          <md-list-item>
-            <md-icon>error</md-icon>
-            <span class="md-list-item-text">Charts</span>
-          </md-list-item>
+          <router-link v-bind:to="{ name: 'Charts' }">
+            <md-list-item>
+              <md-icon>error</md-icon>
+              <span class="md-list-item-text">Charts</span>
+            </md-list-item>
+          </router-link>
         </md-list>
       </md-app-drawer>
 

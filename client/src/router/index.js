@@ -5,6 +5,7 @@ import Food from '@/components/Food';
 import Dishes from '@/components/Dishes';
 import Calculator from '@/components/Calculator';
 import MyProfile from '@/components/MyProfile';
+import Charts from '@/components/Charts';
 
 Vue.use(Router);
 
@@ -31,6 +32,10 @@ export default new Router({
       path: '/my-profile',
       name: 'MyProfile',
       component: MyProfile,
+    }, {
+      path: '/charts',
+      name: 'Charts',
+      component: Charts,
     },
   ],
 });
