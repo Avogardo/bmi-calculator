@@ -13,6 +13,20 @@
       <md-card-content>
         Your daily caloric demand to keep your weight is: {{ description.neededDailyCal }}kcal.
       </md-card-content>
+
+      <md-card-content>
+        <md-list>
+          <md-subheader>Your daily nutritional values to keep your weight is:</md-subheader>
+          <md-list-item
+            v-for="(value, index) in Object.keys(description.nutritionalValues)"
+            :key="Object.keys(description.nutritionalValues)[index]"
+          >
+            <span class="md-list-item-text">
+              {{ value }}: {{ description.nutritionalValues[value] }}g
+            </span>
+          </md-list-item>
+        </md-list>
+      </md-card-content>
     </md-card>
   </div>
 </template>
@@ -29,7 +43,12 @@
           title: '',
           paragraph: '',
           neededDailyCal: 0,
-        }
+          nutritionalValues: {
+            protein: 0, // bialko
+            carbohydrates: 0, // węglowodany
+            fats: 0,
+          },
+        },
       };
     },
     mounted() {
@@ -46,7 +65,13 @@
           age,
         };
         this.calculateBmi(userData);
-        this.calculateDailyNeeds(userData)
+        this.calculateDailyNeeds(userData);
+        this.calculateNutritionalValues(userData);
+      },
+      calculateNutritionalValues({ weight }) {
+        this.description.nutritionalValues.protein = Math.round(weight / 1.5 * 10) / 10;
+        this.description.nutritionalValues.carbohydrates = Math.round(weight / 4 * 10) / 10;
+        this.description.nutritionalValues.fats = Math.round(weight / 1.25 * 10) / 10;
       },
       calculateDailyNeeds({ height, weight, gender, age }) {
         if (gender.trim().toLowerCase() === 'male') {
