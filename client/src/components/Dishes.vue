@@ -111,7 +111,6 @@
       async getDishes() {
         const response = await CalculatorService.fetchDishes();
         this.dishes = response.data.dishes;
-        console.log(this.dishes);
       },
       onSelect(items) {
         this.selected = items;

@@ -136,7 +136,6 @@ app.post('/food', (req, res) => {
 app.post('/food/remove', async (req, res) => {
   try {
     const { foodIds } = req.body;
-    console.log(foodIds);
     for (let i = 0; i < foodIds.length; i++) {
       const foodId = foodIds[i];
       const dishesWithFoodToRemove = await Dish.find({ foodIds: foodId });
@@ -189,8 +188,6 @@ app.get('/dishes', async (req, res) => {
 
 app.post('/dishes', (req, res) => {
   const { name, foodIds, ownerId } = req.body;
-  console.log(req.user, req.body);
-
   const newDish = new Dish({
     ownerId,
     name,

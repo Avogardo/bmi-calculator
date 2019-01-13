@@ -51,6 +51,7 @@
 <script>
   import CalculatorService from '@/services/CalculatorService';
   import UserSettings from '@/components/UserSettings';
+
   export default {
     name: 'MyProfile',
     components: {
@@ -62,7 +63,7 @@
         showDialog: false,
         showAddSnackbar: false,
         userSetting: {},
-      }
+      };
     },
     mounted() {
       this.getUser();
