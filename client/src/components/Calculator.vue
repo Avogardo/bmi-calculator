@@ -46,7 +46,7 @@
       },
       generateDescription(bmi) {
         switch (true) {
-          case (bmi < 16):
+          case (bmi < 16.0):
             this.description.title = 'poniżej 16,0 – wygłodzenie';
             this.description.paragraph = `BMI wynoszące 16 lub mniej oznacza wygłodzenie. Jest to znaczna utrata tkanki mięśniowej i tłuszczowej, stanowiąca zagrożenie dla zdrowia i życia. Następuje ona wskutek dysproporcji pomiędzy ilością spożywanego pokarmu a wydatkiem energetycznym.
 
@@ -58,7 +58,7 @@ Wygłodzenie może doprowadzić do skrajnego wycieńczenia organizmu, a w konsek
 
 W przypadku BMI wynoszącego mniej niż 16 niezbędna jest specjalistyczna konsultacja i zmiana nawyków żywieniowych.`;
             break;
-          case (16 < bmi < 17):
+          case (bmi < 17):
             this.description.title = '16,0–17,0 – wychudzenie';
             this.description.paragraph = `BMI wynoszące 16,0-17,0 oznacza wychudzenie. Jest to stan zagrażający zdrowiu, wynikający ze spożywania zbyt małej ilości kalorii lub nadmiernej aktywności fizycznej. Wychudzenie diagnozuje się, jeżeli masa ciała danej osoby spada o 10 proc. poniżej optymalnej wartości. Wskaźnik BMI pozwala zdiagnozować ten stan i daje sygnał do zmian, które mogą zapobiec negatywnym konsekwencjom zdrowotnym zbyt niskiej masy ciała.
 
@@ -70,7 +70,7 @@ Tak niski wskaźnik masy ciała może być także następstwem chorób, takich j
 
 Aby ograniczyć ryzyko chorób wynikających ze zbyt niskiej masy ciała, zalecana jest zmiana nawyków żywieniowych, a w szczególności dostarczenie zwiększonej ilości kalorii na drodze zbilansowanej diety, najlepiej ułożonej przez specjalistę. Korzyści przynieść może także regularna, ale nie nadmierna aktywność fizyczna, relaks, zmniejszenie poziomu stresu i odpowiednia ilość snu.`;
             break;
-          case (17 < bmi < 18.5):
+          case (bmi < 18.5):
             this.description.title = '17–18,5 – niedowagę';
             this.description.paragraph = `BMI mieszczące się w zakresie 17,0-18,5 oznacza niedowagę. Nieznacznie niższy niż normalny wskaźnik masy ciała często jest wynikiem rygorystycznego stosowania się do zasad zdrowego stylu życia. Specjaliści podkreślają, że niewielkie wykroczenie poza zakres prawidłowego BMI może się wiązać ze zwiększoną długością życia. Jednak podobne korzyści nie pojawiają się u wszystkich osób posiadających niski wskaźnik masy ciała.
 
@@ -80,7 +80,7 @@ Niedowaga może być skutkiem uwarunkowań genetycznych, cech indywidualnych, zm
 
 Podczas gdy niedowaga nie jest tak wyniszczająca, jak wychudzenie lub wygłodzenie, łatwo przekroczyć granicę, kiedy zaczyna niszczyć zdrowie. Pamiętaj, że BMI bliskie 17 jest sygnałem ostrzegawczym, który powinien skłonić cię do zmiany nawyków żywieniowych.`;
             break;
-          case (18.5 < bmi < 25):
+          case (bmi < 25):
             this.description.title = '18,5–25,0 – wartość prawidłową';
             this.description.paragraph = `BMI wynoszące od 18,5 do 25,0 określane jest jako prawidłowe. Zakres ten jest identyczny dla wszystkich osób dorosłych, niezależnie od ich wieku i płci. Szczupłe kobiety zazwyczaj posiadają współczynnik masy ciała mieszczący się w dolnym zakresie skali, a mężczyźni częściej zbliżają się do pułapu 25.
 
@@ -92,7 +92,7 @@ Wśród przyczyn odchyleń od prawidłowego BMI wymienia się przede wszystkim s
 
 Osoby z BMI blisko górnej lub dolnej granicy prawidłowego zakresu powinny podjąć działania zapobiegające dalszemu wzrostowi lub spadkowi masy ciała. W razie jakichkolwiek wątpliwości dotyczących współczynnika BMI, należy udać się do specjalisty.`;
             break;
-          case (25 < bmi < 30):
+          case (bmi < 30):
             this.description.title = '25,0–30,0 – nadwagę';
             this.description.paragraph = `BMI mieszczące się w zakresie 25,0-30,0 oznacza nadwagę. Jest to stan wpływający na zwiększone ryzyko chorób układu sercowo-naczyniowego, w związku z czym wymaga zdecydowanej interwencji.
 
@@ -102,7 +102,7 @@ Wskaźnik BMI pozwala w wiarygodny sposób stwierdzić nadwagę oraz ryzyko chor
 
 Aby zapobiec dalszemu wzrostowi masy ciała oraz obniżyć BMI, konieczna jest zmiana nawyków żywieniowych, najlepiej pod okiem specjalisty. Oprócz zbilansowanej diety należy także pamiętać o regularnej aktywności fizycznej. Bez zdecydowanych kroków nadwaga może przerodzić się w otyłość, która niesie jeszcze poważniejsze konsekwencje dla zdrowia i jest znacznie trudniejsza do pokonania.`;
             break;
-          case (30 < bmi < 35):
+          case (bmi < 35):
             this.description.title = '30,0–35,0 – I stopień otyłości';
             this.description.paragraph = `BMI mieszczące się zakresie 30,0-35,0 określane jest jako I stopień otyłości. U osób posiadających podobny wskaźnik masy ciała nagromadzenie tkanki tłuszczowej jest wyższe niż zalecane, co niesie ryzyko wielu chorób.
 
@@ -116,7 +116,7 @@ Na otyłość typu I wpływ mogą mieć także predyspozycje genetyczne i niski 
 
 Jeżeli twoje BMI wskazuje na I stopień otyłości, powinieneś podjąć kroki w celu obniżenia masy ciała, ponieważ pogłębiający się problem jest coraz trudniejszy do rozwiązania. Dlatego też pamiętaj o regularnej aktywności fizycznej i odpowiedniej diecie, najlepiej dostosowanej do twoich indywidualnych potrzeb przez specjalistę w zakresie żywienia człowieka.`;
             break;
-          case (35 < bmi < 40):
+          case (bmi < 40):
             this.description.title = '35,0–40,0 – II stopień otyłości';
             this.description.paragraph = `BMI mieszczące się w zakresie 35,0-40,0 oznacza II stopień otyłości. Wynika ona z nadmiernego spożycia kalorii w porównaniu do wydatku energetycznego. Spowodowana może być również czynnikami emocjonalnymi, hormonalnymi i dziedzicznymi.
 
@@ -128,7 +128,7 @@ Nadmierna waga może być przyczyną stresu emocjonalnego. Często jako atrakcyj
 
 W przypadku otyłości II stopnia niezbędny jest odpowiedni plan żywieniowy zakładający określone zapotrzebowanie na kalorie, witaminy i składniki mineralne. Ponadto wskazana jest aktywność fizyczna. Jeżeli chcesz skutecznie zmniejszyć masę ciała, powinieneś zmienić codzienne nawyki, np. jeść mniejsze ilości pokarmu i rozsądniej dobierać spożywane produkty. W przypadku posiadaczy genu otyłości konieczna może okazać się farmakoterapia.`;
             break;
-          case (40 < bmi):
+          default:
             this.description.title = 'powyżej 40,0 – III stopień otyłości';
             this.description.paragraph = `BMI wynoszące powyżej 40 oznacza III, najwyższy stopień otyłości. Stan ten wiąże się z dużym nagromadzeniem tłuszczu, co ma skrajnie negatywny wpływ na zdrowie. Osoby otyłe spożywają dużo więcej kalorii niż spalają, często unikają także aktywności fizycznej – prowadzą siedzący tryb życia. Jedną z najczęstszych przyczyn tak wysokiego BMI są także zaburzenia snu – brak jego wystarczającej ilości stymuluje apetyt i przyczynia się do zaburzeń hormonalnych.
 
@@ -139,8 +139,6 @@ Jeżeli spożywasz dużo produktów zawierających tłuszcze nasycone i cukier r
 Ekstremalnie wysoka masa ciała naraża cię na choroby zwyrodnieniowe stawów, w szczególności kolanowych. Przyczynia się również do zaburzeń układu oddechowego – oddychanie jest utrudnione z powodu zmniejszonego rozmiaru płuc. Ponadto otyłość III stopnia powiązana jest z większym ryzykiem bezdechu sennego.
 
 Leczenie otyłości III stopnia należy rozpocząć do wizyty u specjalisty. Musisz liczyć się z koniecznością niemal całkowitej zmiany codziennych nawyków.`;
-            break;
-          default:
             break;
         }
       }
