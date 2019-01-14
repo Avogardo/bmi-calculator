@@ -14,8 +14,10 @@
   },
   "dependencies": {
     "axios": "^0.18.0",
+    "chart.js": "^2.7.3",
     "https-proxy-agent": "^2.2.1",
     "vue": "^2.5.2",
+    "vue-chartjs": "^3.4.0",
     "vue-material": "^1.0.0-beta-10.2",
     "vue-router": "^3.0.1"
   },
