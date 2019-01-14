@@ -7,7 +7,8 @@
 
       <md-card-content>
         Forecast assistance
-        <line-chart :chart-data="dataCollection" :height="100"></line-chart>
+        <line-chart :chart-data="lineDataCollection" :options="options" :height="100"></line-chart>
+        <bar-chart :chart-data="barDataCollection" :options="options" :height="100"></bar-chart>
       </md-card-content>
 
     </md-card>
@@ -22,10 +23,11 @@
   import CalculatorService from '@/services/CalculatorService';
   import getCalculateNeededDailyCal, { getNextDate } from '../helper';
   import LineChart from '../charts/line-chart';
+  import BarChart from '../charts/bar-chart';
 
   export default {
     name: 'Charts',
-    components: { LineChart },
+    components: { LineChart, BarChart },
     data: () => ({
       user: {
         age: 0,
@@ -35,7 +37,23 @@
         neededDailyCal: 0,
       },
       neededDailyCal: 0,
-      dataCollection:  {},
+      lineDataCollection:  {},
+      barDataCollection:  {},
+      options: {
+        scales: {
+          yAxes: [{
+            stacked: true,
+            ticks: {
+              beginAtZero: true
+            }
+          }],
+          xAxes: [{
+            stacked: true,
+            ticks: {
+              beginAtZero: true
+            }
+          }]
+        }}
     }),
     mounted() {
       this.getUser();
@@ -57,13 +75,24 @@
           data.push(weight - multiplier * i);
         }
 
-        this.dataCollection = {
+        this.lineDataCollection = {
           labels,
           datasets: [{
-            label: "Test",
+            label: "Weight",
             backgroundColor: "#00CC6A",
             borderColor: "#00CC6A",
             data,
+          }],
+        };
+
+        const barData = [getCalculateNeededDailyCal(this.user), neededDailyCal];
+        this.barDataCollection = {
+          labels: ['Counted demand', 'Typed demand'],
+          datasets: [{
+            label: "Daily caloric demand",
+            backgroundColor: "#ffCC6A",
+            borderColor: "#ddCC6A",
+            data: barData,
           }],
         };
       }
