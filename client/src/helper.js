@@ -139,4 +139,9 @@ const getCalculateNeededDailyCal = ({
   }
 };
 
+export const getNextDate = dayAmount => {
+  const expectedDay = new Date(new Date().setDate(new Date().getDate() + dayAmount));
+  return `${expectedDay.getDate()}.${expectedDay.getMonth() + 1}.${expectedDay.getFullYear()}`;
+};
+
 export default getCalculateNeededDailyCal;
