@@ -81,9 +81,9 @@
         this.lineDataCollection = {
           labels,
           datasets: [{
-            label: "Weight",
-            backgroundColor: "#00CC6A",
-            borderColor: "#00CC6A",
+            label: 'Weight',
+            backgroundColor: '#fc7976',
+            borderColor: '#fc6a68',
             data,
           }],
         };
@@ -92,16 +92,20 @@
         this.barDataCollection = {
           labels: ['Counted demand', 'Typed demand'],
           datasets: [{
-            label: "Daily caloric demand",
-            backgroundColor: "#ffCC6A",
-            borderColor: "#ddCC6A",
+            label: 'Daily caloric demand',
+            backgroundColor: '#ffCC6A',
+            borderColor: '#ffbe55',
             data: barData,
           }],
         };
 
-        const doughnutData = [getCalculateNeededDailyCal(this.user), neededDailyCal];
+        const doughnutData = [
+          Math.round(weight / 1.5 * 10) / 10,
+          Math.round(weight / 4 * 10) / 10,
+          Math.round(weight / 1.25 * 10) / 10,
+        ];
         this.doughnutDataCollection = {
-          labels: ['Counted demand', 'Typed demand'],
+          labels: ['Protein', 'Carbohydrates', 'Fats'],
           datasets: [{
             label: 'Daily nutritional values',
             backgroundColor: ['#35b982', '#00d8ff', '#e11c01'],
