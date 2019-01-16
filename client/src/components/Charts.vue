@@ -9,6 +9,7 @@
         Forecast assistance
         <line-chart :chart-data="lineDataCollection" :options="options" :height="100"></line-chart>
         <bar-chart :chart-data="barDataCollection" :options="options" :height="100"></bar-chart>
+        <doughnut-chart :chart-data="doughnutDataCollection" :height="100"></doughnut-chart>
       </md-card-content>
 
     </md-card>
@@ -24,10 +25,11 @@
   import getCalculateNeededDailyCal, { getNextDate } from '../helper';
   import LineChart from '../charts/line-chart';
   import BarChart from '../charts/bar-chart';
+  import DoughnutChart from '../charts/doughnut-chart';
 
   export default {
     name: 'Charts',
-    components: { LineChart, BarChart },
+    components: { LineChart, BarChart, DoughnutChart },
     data: () => ({
       user: {
         age: 0,
@@ -39,6 +41,7 @@
       neededDailyCal: 0,
       lineDataCollection:  {},
       barDataCollection:  {},
+      doughnutDataCollection:  {},
       options: {
         scales: {
           yAxes: [{
@@ -93,6 +96,16 @@
             backgroundColor: "#ffCC6A",
             borderColor: "#ddCC6A",
             data: barData,
+          }],
+        };
+
+        const doughnutData = [getCalculateNeededDailyCal(this.user), neededDailyCal];
+        this.doughnutDataCollection = {
+          labels: ['Counted demand', 'Typed demand'],
+          datasets: [{
+            label: 'Daily nutritional values',
+            backgroundColor: ['#35b982', '#00d8ff', '#e11c01'],
+            data: doughnutData,
           }],
         };
       }
