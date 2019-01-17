@@ -35,8 +35,8 @@
         <md-table-cell md-label="Name" md-sort-by="name">
           {{ item.name }}
         </md-table-cell>
-        <md-table-cell md-label="Email" md-sort-by="email">
-          {{ item.description }}
+        <md-table-cell md-label="Calories" md-sort-by="Calories">
+          {{ item.kCalories }}kcal
         </md-table-cell>
       </md-table-row>
     </md-table>
@@ -92,7 +92,7 @@
         showAddSnackbar: false,
         foods: {
           name: '',
-          description: '',
+          kCalories: 0,
         },
       }
     },

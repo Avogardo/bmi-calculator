@@ -45,7 +45,7 @@ app.use(function (req, res, next) {
 });
 
 app.get('/', (req, res) => {
-  Food.find({}, 'name description', function (error, posts) {
+  Food.find({}, (error, posts) => {
     if (error) {
       console.error(error);
     }
@@ -124,10 +124,10 @@ app.listen(process.env.PORT || 8081, () => {
 
 // Add new food
 app.post('/food', (req, res) => {
-  const { name, description } = req.body;
+  const { name, kCalories } = req.body;
   const newPost = new Food({
     name,
-    description,
+    kCalories,
   });
 
   newPost.save((error) => {

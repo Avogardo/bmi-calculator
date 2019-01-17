@@ -7,7 +7,7 @@
       v-bind:key="Object.keys(foods)[index]"
     >
       <label>Type your {{ food }}...</label>
-      <md-input v-model="foods[food]"></md-input>
+      <md-input v-model="foods[food]" :type="typeof foods[food]"></md-input>
     </md-field>
 
     <md-dialog-actions>

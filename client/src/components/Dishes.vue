@@ -4,7 +4,7 @@
 
     <md-table v-model="dishes" md-card @md-selected="onSelect">
       <md-table-toolbar>
-        <h2 class="md-title">There is your dishes collection.</h2>
+        <h2 class="md-title">There is your dishes collection, sum of kcal: </h2>
       </md-table-toolbar>
 
       <md-table-toolbar slot="md-table-alternate-header" slot-scope="{ count }">
@@ -34,7 +34,7 @@
             <md-list-item v-for="food in item.foods" :key="food._id">
               <div class="md-list-item-text">
                 <span>{{ food.name }}</span>
-                <span>{{ food.description }}</span>
+                <span>{{ food.kCalories }}kcal</span>
               </div>
             </md-list-item>
           </md-list>
@@ -52,7 +52,7 @@
     </md-dialog>
 
     <md-button class="md-primary md-raised" @click="showDialog = true">
-      Show Dialog
+      Add dish
     </md-button>
 
     <md-snackbar
@@ -87,6 +87,7 @@
 <script>
   import CalculatorService from '@/services/CalculatorService'
   import AddDish from '@/components/AddDish';
+
   export default {
     name: 'Dishes',
     components: {
