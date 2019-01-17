@@ -42,7 +42,14 @@
           <router-link v-bind:to="{ name: 'MyProfile' }">
             <md-list-item>
               <md-icon>delete</md-icon>
-              <span class="md-list-item-text">MyProfile</span>
+              <span class="md-list-item-text">My Profile</span>
+            </md-list-item>
+          </router-link>
+
+          <router-link v-bind:to="{ name: 'Training' }">
+            <md-list-item>
+              <md-icon>delete</md-icon>
+              <span class="md-list-item-text">Training</span>
             </md-list-item>
           </router-link>
 
