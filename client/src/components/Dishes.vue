@@ -4,7 +4,7 @@
 
     <md-table v-model="dishes" md-card @md-selected="onSelect">
       <md-table-toolbar>
-        <h2 class="md-title">There is your dishes collection, sum of kcal: </h2>
+        <h2 class="md-title">There is your dishes collection, sum of kcal: {{ dailyCalories }}kcal</h2>
       </md-table-toolbar>
 
       <md-table-toolbar slot="md-table-alternate-header" slot-scope="{ count }">
@@ -103,7 +103,8 @@
           name: '',
           foodIds: [],
         },
-      }
+        dailyCalories: 0,
+      };
     },
     mounted () {
       this.getDishes();
@@ -112,6 +113,16 @@
       async getDishes() {
         const response = await CalculatorService.fetchDishes();
         this.dishes = response.data.dishes;
+        this.setDailyCalories(this.dishes);
+      },
+      setDailyCalories(dishes) {
+        const kcalArray = [];
+        dishes.forEach(dish => {
+          dish.foods.forEach(food => {
+            kcalArray.push(food.kCalories);
+          });
+        });
+        this.dailyCalories = kcalArray.reduce((a, b) => a + b, 0);
       },
       onSelect(items) {
         this.selected = items;
