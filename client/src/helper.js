@@ -144,4 +144,14 @@ export const getNextDate = dayAmount => {
   return `${expectedDay.getDate()}.${expectedDay.getMonth() + 1}.${expectedDay.getFullYear()}`;
 };
 
+export const getDailyCalories = dishes => {
+  const kcalArray = [];
+  dishes.forEach(dish => {
+    dish.foods.forEach(food => {
+      kcalArray.push(food.kCalories);
+    });
+  });
+  return kcalArray.reduce((a, b) => a + b, 0);
+};
+
 export default getCalculateNeededDailyCal;

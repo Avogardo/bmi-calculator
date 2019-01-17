@@ -22,7 +22,7 @@
 
 <script>
   import CalculatorService from '@/services/CalculatorService';
-  import getCalculateNeededDailyCal, { getNextDate } from '../helper';
+  import getCalculateNeededDailyCal, { getNextDate, getDailyCalories } from '../helper';
   import LineChart from '../charts/line-chart';
   import BarChart from '../charts/bar-chart';
   import DoughnutChart from '../charts/doughnut-chart';
@@ -64,12 +64,13 @@
     methods: {
       async getUser() {
         const user = await CalculatorService.fetchUser();
+        const dishes = await CalculatorService.fetchDishes();
         this.user = user.data.user;
         this.neededDailyCal = getCalculateNeededDailyCal(this.user);
         console.log(this.user);
-        this.generateCharts(this.user);
+        this.generateCharts(this.user, dishes.data.dishes);
       },
-      generateCharts({ weight, neededDailyCal }) {
+      generateCharts({ weight, neededDailyCal }, dishes) {
         const labels = [];
         const data = [];
         const multiplier = Math.floor((getCalculateNeededDailyCal(this.user) - neededDailyCal) / 500); // 1kg every 500kcal
@@ -87,13 +88,17 @@
             data,
           }],
         };
-
-        const barData = [getCalculateNeededDailyCal(this.user), neededDailyCal];
+console.log(dishes)
+        const barData = [
+          getCalculateNeededDailyCal(this.user),
+          neededDailyCal,
+          getDailyCalories(dishes),
+        ];
         this.barDataCollection = {
-          labels: ['Counted demand', 'Typed demand'],
+          labels: ['Counted demand', 'Typed demand', 'Your dishes calories'],
           datasets: [{
             label: 'Daily caloric demand',
-            backgroundColor: '#ffCC6A',
+            backgroundColor: ['#ffCC6A', '#00d8ff', '#e11c01'],
             borderColor: '#ffbe55',
             data: barData,
           }],

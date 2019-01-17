@@ -87,6 +87,7 @@
 <script>
   import CalculatorService from '@/services/CalculatorService'
   import AddDish from '@/components/AddDish';
+  import { getDailyCalories } from '../helper';
 
   export default {
     name: 'Dishes',
@@ -113,16 +114,7 @@
       async getDishes() {
         const response = await CalculatorService.fetchDishes();
         this.dishes = response.data.dishes;
-        this.setDailyCalories(this.dishes);
-      },
-      setDailyCalories(dishes) {
-        const kcalArray = [];
-        dishes.forEach(dish => {
-          dish.foods.forEach(food => {
-            kcalArray.push(food.kCalories);
-          });
-        });
-        this.dailyCalories = kcalArray.reduce((a, b) => a + b, 0);
+        this.dailyCalories = getDailyCalories(this.dishes);
       },
       onSelect(items) {
         this.selected = items;
