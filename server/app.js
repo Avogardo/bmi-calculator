@@ -26,8 +26,6 @@ app.use(cookieSession({
 app.use(passport.initialize());
 app.use(passport.session());
 
-require("./api/food-api")(app);
-
 app.use(function (req, res, next) {
   // Website you wish to allow to connect
   res.setHeader('Access-Control-Allow-Origin', 'http://localhost:8080');
@@ -45,6 +43,9 @@ app.use(function (req, res, next) {
   // Pass to next layer of middleware
   next();
 });
+
+require("./api/dish-api")(app);
+require("./api/food-api")(app);
 
 // auth logout
 app.get('/auth/logout', (req, res) => {
@@ -110,72 +111,6 @@ mongoose.connect(
 
 app.listen(process.env.PORT || 8081, () => {
   console.log('app now listening for requests on port 8081');
-});
-
-app.get('/dishes', async (req, res) => {
-  const { user } = req;
-
-  if (user) {
-    try {
-      const dishes = await Dish.find({ ownerId: req.user._id });
-      const dishesResponse = [];
-
-      for (let i = 0; i < dishes.length; i++) {
-        const { name, foodIds } = dishes[i];
-        const foods = await Food.find({ _id: { $in: foodIds } });
-
-        dishesResponse.push({
-          name,
-          ownerName: req.user.userName,
-          foods,
-        });
-      }
-      res.send({
-        dishes: dishesResponse,
-      });
-    } catch (error) {
-      console.error(error);
-    }
-  } else {
-    res.send({
-      dishes: [],
-    });
-  }
-});
-
-app.post('/dishes', (req, res) => {
-  const { name, foodIds, ownerId } = req.body;
-  const newDish = new Dish({
-    ownerId,
-    name,
-    foodIds,
-  });
-
-  newDish.save((error) => {
-    if (error) {
-      console.log(error);
-    }
-    res.send({
-      success: true,
-      message: 'Food saved successfully!',
-    });
-  });
-});
-
-app.post('/dishes/remove', (req, res) => {
-  const { foodIds } = req.body;
-
-  Dish.remove({
-    _id: { '$in': foodIds }
-  }, (err) => {
-    if (err) {
-      res.send(err);
-    }
-
-    res.send({
-      success: true,
-    });
-  });
 });
 
 module.exports = app;

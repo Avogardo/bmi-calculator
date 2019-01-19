@@ -17,7 +17,7 @@ export default {
     return api.foodApi().post('dishes', params);
   },
   removeDishes(params) {
-    return api.foodApi().put('/dishes/remove', params);
+    return api.foodApi().post('/dishes/remove', params);
   },
   login() {
     return api.userApi().get('/auth/google');

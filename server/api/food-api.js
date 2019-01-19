@@ -36,7 +36,7 @@ module.exports = app => { // receiving "app" instance
   app.post('/food/remove', async (req, res) => {
     try {
       const { foodIds } = req.body;
-      console.log(foodIds);
+
       for (let i = 0; i < foodIds.length; i++) {
         const foodId = foodIds[i];
         const dishesWithFoodToRemove = await Dish.find({ foodIds: foodId });
