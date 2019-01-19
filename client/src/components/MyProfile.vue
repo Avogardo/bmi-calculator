@@ -11,7 +11,7 @@
       </md-card-header>
 
       <md-card-content>
-        {{user.gender && user.height && user.weight ?
+        {{user.gender && user.height && user.weight && user.neededDailyCal ?
             'Everything configured'
             :
             'Update your profile please'

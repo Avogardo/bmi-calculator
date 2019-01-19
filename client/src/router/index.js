@@ -55,10 +55,12 @@ router.beforeEach((to, from, next) => {
   if (to.matched.some(m => m.meta.needGuard)) {
     if (loggedUser.loggedUser) {
       next();
+    } else {
+      router.push('/');
     }
   } else {
     next();
   }
 });
 
-export default router
+export default router;

@@ -1,6 +1,6 @@
 <template>
-  <div class="posts">
-    <md-card>
+  <div class="posts" v-if="isContentLoaded">
+    <md-card v-if="user.gender && user.height && user.weight && user.neededDailyCal">
       <md-card-header>
         <div class="md-subhead">Summary</div>
       </md-card-header>
@@ -11,7 +11,15 @@
         <bar-chart :chart-data="barDataCollection" :options="options" :height="100"></bar-chart>
         <doughnut-chart :chart-data="doughnutDataCollection" :height="100"></doughnut-chart>
       </md-card-content>
+    </md-card>
 
+    <md-card v-if="!(user.gender && user.height && user.weight && user.neededDailyCal)">
+      <md-empty-state
+        md-icon="person"
+        md-label="Update your profile first"
+        md-description="Updating your profile, you'll be able to get access to forecast assistance and observing your stats like weight or daily caloric demand">
+        <md-button @click="goToUserProfile()" class="md-primary md-raised">Go to my profile settings</md-button>
+      </md-empty-state>
     </md-card>
   </div>
 </template>
@@ -22,6 +30,7 @@
 
 <script>
   import CalculatorService from '@/services/CalculatorService';
+  import router from '../router';
   import getCalculateNeededDailyCal, {
     getNextDate,
     getDailyCalories,
@@ -46,6 +55,7 @@
       lineDataCollection:  {},
       barDataCollection:  {},
       doughnutDataCollection:  {},
+      isContentLoaded: false,
       options: {
         scales: {
           yAxes: [{
@@ -75,6 +85,7 @@
         this.user = user.data.user;
         this.neededDailyCal = getCalculateNeededDailyCal(this.user);
         this.generateCharts(this.user, dishes.data.dishes, trainings);
+        this.isContentLoaded = true;
       },
       generateCharts({ weight, neededDailyCal }, dishes, trainings) {
         const labels = [];
@@ -124,7 +135,10 @@
             data: doughnutData,
           }],
         };
-      }
+      },
+      goToUserProfile() {
+        router.push('/my-profile');
+      },
     },
-  }
+  };
 </script>
