@@ -1,6 +1,6 @@
 <template>
   <div>
-    <md-card>
+    <md-card v-if="isContentLoaded">
       <md-card-header>
         <div class="md-title">Trainings</div>
       </md-card-header>
@@ -9,7 +9,24 @@
         Here you can add your today burned calories from training
       </md-card-content>
 
-      <md-card-actions>
+      <md-card-content v-if="!trainings.length">
+        <md-empty-state
+          md-icon="fitness_center"
+          md-label="Create your first training"
+          md-description="Creating trainings, you'll be able to see your stats and more precise forecasts of your weight."
+        >
+          <md-field>
+            <label>Calories</label>
+            <md-input v-model="trainingsCalories" type="number"></md-input>
+          </md-field>
+          <md-button @click="onAdd()" class="md-primary md-raised">Create first training</md-button>
+        </md-empty-state>
+      </md-card-content>
+      <md-card-content v-if="trainings.length">
+         training
+      </md-card-content>
+
+      <md-card-actions v-if="trainings.length">
         <md-field>
           <label>Calories</label>
           <md-input v-model="trainingsCalories" type="number"></md-input>
@@ -37,8 +54,9 @@
     data() {
       return {
         trainingsCalories: 0,
-        trainings: 0,
+        trainings: [],
         showAddSnackbar: false,
+        isContentLoaded: false,
       };
     },
     mounted() {
@@ -48,6 +66,7 @@
       async getTrainings() {
         const response = await CalculatorService.fetchTrainings();
         this.trainings = response.data.trainings;
+        this.isContentLoaded = true;
       },
       async onAdd() {
         const user = await CalculatorService.fetchUser();
