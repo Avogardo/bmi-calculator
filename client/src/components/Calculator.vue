@@ -13,7 +13,7 @@
       <md-card-content>
         <p>Your daily caloric demand to keep your weight is: {{ description.neededDailyCal }}kcal.</p>
         <p>You type {{ user.neededDailyCal }}kcal as your daily caloric demand{{ burnedCalories ?
-          `, but you have burned ${burnedCalories}kcals tooday`
+          `, but you have burned ${burnedCalories}kcals tooday, so you need ${user.neededDailyCal + burnedCalories}`
           :
           ''
         }}</p>

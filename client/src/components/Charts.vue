@@ -22,7 +22,11 @@
 
 <script>
   import CalculatorService from '@/services/CalculatorService';
-  import getCalculateNeededDailyCal, { getNextDate, getDailyCalories } from '../helper';
+  import getCalculateNeededDailyCal, {
+    getNextDate,
+    getDailyCalories,
+    getBurnedCalories,
+  } from '../helper';
   import LineChart from '../charts/line-chart';
   import BarChart from '../charts/bar-chart';
   import DoughnutChart from '../charts/doughnut-chart';
@@ -65,12 +69,14 @@
       async getUser() {
         const user = await CalculatorService.fetchUser();
         const dishes = await CalculatorService.fetchDishes();
+        const trainingsData = await CalculatorService.fetchTodayTrainings();
+
+        const { trainings } = trainingsData.data;
         this.user = user.data.user;
         this.neededDailyCal = getCalculateNeededDailyCal(this.user);
-        console.log(this.user);
-        this.generateCharts(this.user, dishes.data.dishes);
+        this.generateCharts(this.user, dishes.data.dishes, trainings);
       },
-      generateCharts({ weight, neededDailyCal }, dishes) {
+      generateCharts({ weight, neededDailyCal }, dishes, trainings) {
         const labels = [];
         const data = [];
         const multiplier = Math.floor((getCalculateNeededDailyCal(this.user) - neededDailyCal) / 500); // 1kg every 500kcal
@@ -88,17 +94,18 @@
             data,
           }],
         };
-console.log(dishes)
+
         const barData = [
           getCalculateNeededDailyCal(this.user),
           neededDailyCal,
           getDailyCalories(dishes),
+          getBurnedCalories(trainings),
         ];
         this.barDataCollection = {
-          labels: ['Counted demand', 'Typed demand', 'Your dishes calories'],
+          labels: ['Counted demand', 'Typed demand', 'Your dishes calories', 'Burned calories'],
           datasets: [{
             label: 'Daily caloric demand',
-            backgroundColor: ['#ffCC6A', '#00d8ff', '#e11c01'],
+            backgroundColor: ['#ffCC6A', '#00d8ff', '#e11c01', '#6200ee'],
             borderColor: '#ffbe55',
             data: barData,
           }],
