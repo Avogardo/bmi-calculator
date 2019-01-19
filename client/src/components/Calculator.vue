@@ -11,7 +11,12 @@
       </md-card-content>
 
       <md-card-content>
-        Your daily caloric demand to keep your weight is: {{ description.neededDailyCal }}kcal. (you type {{ user.neededDailyCal }}kcal as your daily caloric demand
+        <p>Your daily caloric demand to keep your weight is: {{ description.neededDailyCal }}kcal.</p>
+        <p>You type {{ user.neededDailyCal }}kcal as your daily caloric demand{{ burnedCalories ?
+          `, but you have burned ${burnedCalories}kcals tooday`
+          :
+          ''
+        }}</p>
       </md-card-content>
 
       <md-card-content>
@@ -33,7 +38,7 @@
 
 <script>
   import CalculatorService from '@/services/CalculatorService';
-  import getCalculateNeededDailyCal from '../helper';
+  import getCalculateNeededDailyCal, { getBurnedCalories } from '../helper';
 
   export default {
     name: "Calculator",
@@ -53,6 +58,7 @@
             fats: 0,
           },
         },
+        burnedCalories: 0,
       };
     },
     mounted() {
@@ -62,13 +68,21 @@
       async getUser() {
         const user = await CalculatorService.fetchUser();
         this.user = user.data.user;
-        const { height, weight, gender, age } = this.user;
+        const {
+          height,
+          weight,
+          gender,
+          age,
+        } = this.user;
         const userData = {
           height,
           weight,
           gender,
           age,
         };
+        const trainingsData = await CalculatorService.fetchTodayTrainings();
+        this.burnedCalories = getBurnedCalories(trainingsData.data.trainings);
+
         this.calculateBmi(userData);
         this.calculateNutritionalValues(userData);
         this.description.neededDailyCal = getCalculateNeededDailyCal(userData);

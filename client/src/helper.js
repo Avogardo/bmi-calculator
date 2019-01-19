@@ -147,6 +147,14 @@ export const getNextDate = dayAmount => {
 export const makeDateNormal = date =>
   `${date.getFullYear()}-${(date.getMonth() + 1 > 9 ? '' : '0') + (date.getMonth() + 1)}-${(date.getDate() > 9 ? '' : '0') + date.getDate()}`;
 
+export const getBurnedCalories = trainings => {
+  if (trainings.length) {
+    const arrayOfCalories = trainings.map(ttraining => ttraining.kCalories);
+    return arrayOfCalories.reduce((a, b) => a + b, 0);
+  }
+  return 0;
+};
+
 export const getDailyCalories = dishes => {
   const kcalArray = [];
   dishes.forEach(dish => {
