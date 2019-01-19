@@ -31,6 +31,9 @@ export default {
   fetchTrainings() {
     return api.userApi().get('/trainings');
   },
+  fetchTodayTrainings() {
+    return api.userApi().get('/today-trainings');
+  },
   addTraining(params) {
     return api.foodApi().post('trainings/create', params);
   },

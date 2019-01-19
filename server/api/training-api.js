@@ -13,6 +13,28 @@ module.exports = app => {
     }
   });
 
+  app.get('/today-trainings', async (req, res) => {
+    try {
+      const { _id } = req.user;
+      const start = new Date();
+      start.setHours(0,0,0,0);
+      const end = new Date();
+      end.setHours(23,59,59,999);
+      const trainings = await Training.find({
+        userId: _id,
+        date: {
+          $gte: start,
+          $lt: end,
+        },
+      });
+      res.send({
+        trainings,
+      });
+    } catch (error) {
+      console.error(error);
+    }
+  });
+
   app.post('/trainings/create', async (req, res) => {
     const { userId, trainingsCalories } = req.body;
     const newTraining = new Training({
