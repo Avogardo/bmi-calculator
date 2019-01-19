@@ -26,6 +26,8 @@ app.use(cookieSession({
 app.use(passport.initialize());
 app.use(passport.session());
 
+require("./api/food-api")(app);
+
 app.use(function (req, res, next) {
   // Website you wish to allow to connect
   res.setHeader('Access-Control-Allow-Origin', 'http://localhost:8080');
@@ -42,18 +44,6 @@ app.use(function (req, res, next) {
 
   // Pass to next layer of middleware
   next();
-});
-
-app.get('/', (req, res) => {
-  Food.find({}, (error, posts) => {
-    if (error) {
-      console.error(error);
-    }
-
-    res.send({
-      posts: posts
-    })
-  }).sort({_id:-1})
 });
 
 // auth logout
@@ -122,48 +112,6 @@ app.listen(process.env.PORT || 8081, () => {
   console.log('app now listening for requests on port 8081');
 });
 
-// Add new food
-app.post('/food', (req, res) => {
-  const { name, kCalories } = req.body;
-  const newPost = new Food({
-    name,
-    kCalories,
-  });
-
-  newPost.save((error) => {
-    if (error) {
-      console.log(error);
-    }
-    res.send({
-      success: true,
-      message: 'Food saved successfully!',
-    });
-  });
-});
-
-// Delete a food
-app.post('/food/remove', async (req, res) => {
-  try {
-    const { foodIds } = req.body;
-    for (let i = 0; i < foodIds.length; i++) {
-      const foodId = foodIds[i];
-      const dishesWithFoodToRemove = await Dish.find({ foodIds: foodId });
-
-      for (const dish of dishesWithFoodToRemove) {
-        dish.foodIds.splice(dish.foodIds.indexOf(foodId), 1);
-        await dish.save();
-      }
-    }
-
-    await Food.deleteMany({ _id: { '$in': foodIds } });
-    res.send({
-      success: true,
-    });
-  } catch (error) {
-    res.send(error);
-  }
-});
-
 app.get('/dishes', async (req, res) => {
   const { user } = req;
 
@@ -229,3 +177,5 @@ app.post('/dishes/remove', (req, res) => {
     });
   });
 });
+
+module.exports = app;
