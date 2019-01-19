@@ -44,6 +44,7 @@ app.use(function (req, res, next) {
 require("./api/dish-api")(app);
 require("./api/food-api")(app);
 require("./api/user-api")(app);
+require("./api/training-api")(app);
 
 // auth logout
 app.get('/auth/logout', (req, res) => {
