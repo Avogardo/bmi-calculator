@@ -20,7 +20,7 @@
 
           <router-link v-bind:to="{ name: 'Food' }">
             <md-list-item>
-              <md-icon>send</md-icon>
+              <md-icon>kitchen</md-icon>
                 <span class="md-list-item-text">Food</span>
             </md-list-item>
           </router-link>
@@ -34,28 +34,28 @@
 
           <router-link v-bind:to="{ name: 'Calculator' }">
             <md-list-item>
-              <md-icon>delete</md-icon>
+              <md-icon>apps</md-icon>
               <span class="md-list-item-text">Calculator</span>
             </md-list-item>
           </router-link>
 
           <router-link v-bind:to="{ name: 'MyProfile' }">
             <md-list-item>
-              <md-icon>delete</md-icon>
+              <md-icon>person</md-icon>
               <span class="md-list-item-text">My Profile</span>
             </md-list-item>
           </router-link>
 
           <router-link v-bind:to="{ name: 'Training' }">
             <md-list-item>
-              <md-icon>delete</md-icon>
+              <md-icon>fitness_center</md-icon>
               <span class="md-list-item-text">Training</span>
             </md-list-item>
           </router-link>
 
           <router-link v-bind:to="{ name: 'Charts' }">
             <md-list-item>
-              <md-icon>error</md-icon>
+              <md-icon>show_chart</md-icon>
               <span class="md-list-item-text">Charts</span>
             </md-list-item>
           </router-link>
