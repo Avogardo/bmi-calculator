@@ -33,6 +33,27 @@
         </md-field>
         <md-button @click="onAdd()">Save</md-button>
       </md-card-actions>
+
+      <md-table v-model="trainings" v-if="trainings.length" md-card>
+        <md-table-toolbar>
+          <h2 class="md-title">Trainings</h2>
+        </md-table-toolbar>
+
+        <md-table-row
+          slot="md-table-row"
+          slot-scope="{ item }"
+        >
+          <md-table-cell md-label="Name" md-sort-by="name">
+            {{ item.date }}
+          </md-table-cell>
+          <md-table-cell md-label="Burnd calories" md-sort-by="Calories">
+            {{ item.kCalories }}kcal
+          </md-table-cell>
+          <md-table-cell md-label="Action" md-sort-by="Action">
+            <md-button @click="onRemove(item._id)" class="md-accent">Remove</md-button>
+          </md-table-cell>
+        </md-table-row>
+      </md-table>
     </md-card>
 
     <md-snackbar
@@ -77,6 +98,13 @@
         };
 
         const response = await CalculatorService.addTraining(newTraining);
+        if (response.data.success) {
+          this.showAddSnackbar = true;
+          await this.getTrainings();
+        }
+      },
+      async onRemove(trainingId) {
+        const response = await CalculatorService.removeTraining(trainingId);
         if (response.data.success) {
           this.showAddSnackbar = true;
           await this.getTrainings();

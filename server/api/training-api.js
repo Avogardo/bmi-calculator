@@ -31,11 +31,10 @@ module.exports = app => {
     }
   });
 
-  app.delete('/trainings/remove', async (req, res) => {
+  app.delete('/trainings/:id', async (req, res) => {
     try {
-      const { trainingId } = req.body;
-
-      await Training.delete({ _id: trainingId });
+      const { id } = req.params;
+      await Training.remove({ _id: id });
       res.send({
         success: true,
       });

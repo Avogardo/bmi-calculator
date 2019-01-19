@@ -34,7 +34,7 @@ export default {
   addTraining(params) {
     return api.foodApi().post('trainings/create', params);
   },
-  removeTraining(params) {
-    return api.foodApi().delete('/trainings/remove', params);
+  removeTraining(id) {
+    return api.foodApi().delete('/trainings/' + id);
   },
 }
