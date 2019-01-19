@@ -144,6 +144,9 @@ export const getNextDate = dayAmount => {
   return `${expectedDay.getDate()}.${expectedDay.getMonth() + 1}.${expectedDay.getFullYear()}`;
 };
 
+export const makeDateNormal = date =>
+  `${date.getFullYear()}-${(date.getMonth() + 1 > 9 ? '' : '0') + (date.getMonth() + 1)}-${(date.getDate() > 9 ? '' : '0') + date.getDate()}`;
+
 export const getDailyCalories = dishes => {
   const kcalArray = [];
   dishes.forEach(dish => {
