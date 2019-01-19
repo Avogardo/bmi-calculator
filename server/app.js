@@ -7,9 +7,6 @@ const cors = require('cors');
 const morgan = require('morgan');
 const mongoose = require('mongoose');
 const keys = require('./config/keys');
-const Food = require("./models/food-model");
-const Dish = require("./models/dish-model");
-const User = require("./models/user-model");
 
 const app = express();
 app.use(morgan('combined'));
@@ -46,6 +43,7 @@ app.use(function (req, res, next) {
 
 require("./api/dish-api")(app);
 require("./api/food-api")(app);
+require("./api/user-api")(app);
 
 // auth logout
 app.get('/auth/logout', (req, res) => {
@@ -65,39 +63,6 @@ app.get('/auth/google/redirect', passport.authenticate('google'), (req, res) => 
   // res.send('you reached the redirect URI');
   console.log('redirect', req.user);
   res.redirect('http://localhost:8080/');
-});
-
-app.get('/user', (req, res) => {
-  res.send({
-    user: req.user,
-  });
-});
-
-app.put('/user', async (req, res) => {
-  const {
-    gender,
-    height,
-    weight,
-    age,
-    neededDailyCal,
-    userId,
-  } = req.body;
-
-  try {
-    const user = await User.findById(userId);
-    user.gender = gender;
-    user.height = height;
-    user.weight = weight;
-    user.age = age;
-    user.neededDailyCal = neededDailyCal;
-    user.save();
-
-    res.send({
-      success: true,
-    });
-  } catch (error) {
-    res.send(error);
-  }
 });
 
 // connect to mongodb
