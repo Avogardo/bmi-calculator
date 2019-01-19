@@ -29,7 +29,7 @@ export default {
     return api.foodApi().put('/user', params);
   },
   fetchTrainings() {
-    return api.foodApi().get('/trainings');
+    return api.userApi().get('/trainings');
   },
   addTraining(params) {
     return api.foodApi().post('trainings/create', params);

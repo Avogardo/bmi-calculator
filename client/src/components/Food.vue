@@ -78,6 +78,7 @@
 <script>
   import CalculatorService from '@/services/CalculatorService';
   import AddFood from '@/components/AddFood';
+
   export default {
     name: 'Food',
     props: ['isAddDishMode', 'dish'],
@@ -94,7 +95,7 @@
           name: '',
           kCalories: 0,
         },
-      }
+      };
     },
     mounted() {
       this.getPosts();
@@ -137,5 +138,5 @@
         }
       },
     },
-  }
+  };
 </script>

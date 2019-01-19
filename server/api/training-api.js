@@ -3,8 +3,8 @@ const Training = require("../models/training-model");
 module.exports = app => {
   app.get('/trainings', async (req, res) => {
     try {
-      const { userId } = req.body;
-      const trainings = await Training.find({ userId });
+      const { _id } = req.user;
+      const trainings = await Training.find({ userId: _id });
       res.send({
         trainings,
       });
@@ -14,10 +14,10 @@ module.exports = app => {
   });
 
   app.post('/trainings/create', async (req, res) => {
-    const { userId, kCalories } = req.body;
+    const { userId, trainingsCalories } = req.body;
     const newTraining = new Training({
       userId,
-      kCalories,
+      kCalories: trainingsCalories,
     });
 
     try {
