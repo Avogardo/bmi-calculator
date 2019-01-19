@@ -7,10 +7,11 @@ import Calculator from '@/components/Calculator';
 import MyProfile from '@/components/MyProfile';
 import Charts from '@/components/Charts';
 import Training from '@/components/Training';
+import { loggedUser } from '../helper';
 
 Vue.use(Router);
 
-export default new Router({
+const router = new Router({
   mode: 'history',
   routes: [
     {
@@ -25,23 +26,39 @@ export default new Router({
       path: '/dishes',
       name: 'Dishes',
       component: Dishes,
+      meta: { needGuard: true },
     }, {
       path: '/calculator',
       name: 'Calculator',
       component: Calculator,
+      meta: { needGuard: true },
     }, {
       path: '/my-profile',
       name: 'MyProfile',
       component: MyProfile,
+      meta: { needGuard: true },
     }, {
       path: '/charts',
       name: 'Charts',
       component: Charts,
+      meta: { needGuard: true },
     }, {
       path: '/training',
       name: 'Training',
       component: Training,
+      meta: { needGuard: true },
     },
   ],
 });
-Training
+
+router.beforeEach((to, from, next) => {
+  if (to.matched.some(m => m.meta.needGuard)) {
+    if (loggedUser.loggedUser) {
+      next();
+    }
+  } else {
+    next();
+  }
+});
+
+export default router

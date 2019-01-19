@@ -1,3 +1,5 @@
+import CalculatorService from './services/CalculatorService';
+
 const getCalculateNeededDailyCal = ({
   height,
   weight,
@@ -164,5 +166,16 @@ export const getDailyCalories = dishes => {
   });
   return kcalArray.reduce((a, b) => a + b, 0);
 };
+
+class User {
+  constructor() {
+    CalculatorService.fetchUser().then(user => {
+      this.loggedUser = user.data.user;
+    });
+  }
+}
+
+const user = new User();
+export const loggedUser = user;
 
 export default getCalculateNeededDailyCal;
