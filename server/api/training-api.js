@@ -31,7 +31,7 @@ module.exports = app => {
     }
   });
 
-  app.post('/trainings/remove', async (req, res) => {
+  app.delete('/trainings/remove', async (req, res) => {
     try {
       const { trainingId } = req.body;
 

@@ -28,4 +28,13 @@ export default {
   updateUser(params) {
     return api.foodApi().put('/user', params);
   },
+  fetchTrainings() {
+    return api.foodApi().get('/trainings');
+  },
+  addTraining(params) {
+    return api.foodApi().post('trainings/create', params);
+  },
+  removeTraining(params) {
+    return api.foodApi().delete('/trainings/remove', params);
+  },
 }
