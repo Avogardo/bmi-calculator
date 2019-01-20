@@ -1,50 +1,32 @@
 <template>
   <div class="posts">
     <div v-if="isContentLoaded">
-      <h1 v-if="!isAddDishMode">Food</h1>
+      <md-card :class="{'small-width': isAddDishMode}">
+        <md-card-header v-if="!isAddDishMode">
+          <div class="md-title">Foods</div>
+        </md-card-header>
 
-      <md-table class="food-table" v-model="posts" md-card @md-selected="onSelect" md-fixed-header>
-        <md-table-toolbar>
-          <h2 class="md-title">{{
-            isAddDishMode ?
-              'Select foods for the dish to add'
-              :
-              'There is your food collection.'
-          }}</h2>
-        </md-table-toolbar>
+        <md-list class="food-header">
+          <md-list-item>
+            <div>Name</div>
+            <div>Calories</div>
+            <div>Select</div>
+          </md-list-item>
+        </md-list>
 
-        <md-table-toolbar
-          v-if="!isAddDishMode"
-          slot="md-table-alternate-header"
-          slot-scope="{ count }"
-        >
-          <div class="md-toolbar-section-start">{{ getAlternateLabel(count) }}</div>
-
-          <div class="md-toolbar-section-end">
-            <md-button @click="onRemove()" class="md-icon-button">
-              <md-icon>delete</md-icon>
-            </md-button>
-          </div>
-        </md-table-toolbar>
-
-        <md-table-row
-          slot="md-table-row"
-          slot-scope="{ item }"
-          md-selectable="multiple"
-          md-auto-select
-        >
-          <md-table-cell md-label="Name" md-sort-by="name">
-            {{ item.name }}
-          </md-table-cell>
-          <md-table-cell md-label="Calories" md-sort-by="Calories">
-            {{ item.kCalories }}kcal
-          </md-table-cell>
-        </md-table-row>
-      </md-table>
+        <virtual-list :size="58" :remain="8" wtag="md-list">
+          <md-list-item v-for="item in posts" :key="item._id">
+            <div>{{ item.name }}</div>
+            <div>{{ item.kCalories }}kcal</div>
+            <div><md-checkbox v-model="selected" :value="item" @change="onSelect"></md-checkbox></div>
+          </md-list-item>
+        </virtual-list>
+      </md-card>
 
       <md-button v-if="!isAddDishMode" class="md-primary md-raised" @click="showDialog = true">
         Show Dialog
       </md-button>
+      <md-button v-if="selected.length && !isAddDishMode" @click="onRemove()" class="md-accent">Remove</md-button>
     </div>
 
     <md-progress-spinner v-if="!isContentLoaded" md-mode="indeterminate"></md-progress-spinner>
@@ -77,17 +59,38 @@
   .md-dialog {
     max-width: 768px;
   }
+
+  .md-list-item-content {
+    div:first-child {
+      width: 60%;
+    }
+  }
+
+  .food-header {
+    padding-right: 17px;
+    padding-bottom: 0;
+  }
+
+  .md-list-item {
+    border-bottom: 1px solid gainsboro;
+  }
+
+  .small-width {
+    width: 600px;
+  }
 </style>
 
 <script>
   import CalculatorService from '@/services/CalculatorService';
   import AddFood from '@/components/AddFood';
+  import virtualList from 'vue-virtual-scroll-list'
 
   export default {
     name: 'Food',
     props: ['isAddDishMode', 'dish'],
     components: {
       'AddFood': AddFood,
+      'virtual-list': virtualList,
     },
     data() {
       return {
@@ -111,10 +114,9 @@
         this.posts = response.data.posts;
         this.isContentLoaded = true;
       },
-      onSelect(items) {
-        this.selected = items;
+      onSelect() {
         if (this.dish && this.dish.foodIds) {
-          this.dish.foodIds = items.map(item => item._id);
+          this.dish.foodIds = this.selected.map(item => item._id);
         }
       },
       getAlternateLabel(count) {
