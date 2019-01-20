@@ -6,7 +6,6 @@
     <p>Dominika Pałka 219292</p>
     <p>Jakub Wolny 219293</p>
 
-
     <a href="http://localhost:8081/auth/logout" v-if="loggedUser">
       <md-button class="md-raised">Log out</md-button>
     </a>
