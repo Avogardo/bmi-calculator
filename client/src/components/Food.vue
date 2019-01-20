@@ -1,45 +1,53 @@
 <template>
   <div class="posts">
-    <h1 v-if="!isAddDishMode">Food</h1>
+    <div v-if="isContentLoaded">
+      <h1 v-if="!isAddDishMode">Food</h1>
 
-    <md-table v-model="posts" md-card @md-selected="onSelect">
-      <md-table-toolbar>
-        <h2 class="md-title">{{
-          isAddDishMode ?
-            'Select foods for the dish to add'
-            :
-            'There is your food collection.'
-        }}</h2>
-      </md-table-toolbar>
+      <md-table class="food-table" v-model="posts" md-card @md-selected="onSelect" md-fixed-header>
+        <md-table-toolbar>
+          <h2 class="md-title">{{
+            isAddDishMode ?
+              'Select foods for the dish to add'
+              :
+              'There is your food collection.'
+          }}</h2>
+        </md-table-toolbar>
 
-      <md-table-toolbar
-        v-if="!isAddDishMode"
-        slot="md-table-alternate-header"
-        slot-scope="{ count }"
-      >
-        <div class="md-toolbar-section-start">{{ getAlternateLabel(count) }}</div>
+        <md-table-toolbar
+          v-if="!isAddDishMode"
+          slot="md-table-alternate-header"
+          slot-scope="{ count }"
+        >
+          <div class="md-toolbar-section-start">{{ getAlternateLabel(count) }}</div>
 
-        <div class="md-toolbar-section-end">
-          <md-button @click="onRemove()" class="md-icon-button">
-            <md-icon>delete</md-icon>
-          </md-button>
-        </div>
-      </md-table-toolbar>
+          <div class="md-toolbar-section-end">
+            <md-button @click="onRemove()" class="md-icon-button">
+              <md-icon>delete</md-icon>
+            </md-button>
+          </div>
+        </md-table-toolbar>
 
-      <md-table-row
-        slot="md-table-row"
-        slot-scope="{ item }"
-        md-selectable="multiple"
-        md-auto-select
-      >
-        <md-table-cell md-label="Name" md-sort-by="name">
-          {{ item.name }}
-        </md-table-cell>
-        <md-table-cell md-label="Calories" md-sort-by="Calories">
-          {{ item.kCalories }}kcal
-        </md-table-cell>
-      </md-table-row>
-    </md-table>
+        <md-table-row
+          slot="md-table-row"
+          slot-scope="{ item }"
+          md-selectable="multiple"
+          md-auto-select
+        >
+          <md-table-cell md-label="Name" md-sort-by="name">
+            {{ item.name }}
+          </md-table-cell>
+          <md-table-cell md-label="Calories" md-sort-by="Calories">
+            {{ item.kCalories }}kcal
+          </md-table-cell>
+        </md-table-row>
+      </md-table>
+
+      <md-button v-if="!isAddDishMode" class="md-primary md-raised" @click="showDialog = true">
+        Show Dialog
+      </md-button>
+    </div>
+
+    <md-progress-spinner v-if="!isContentLoaded" md-mode="indeterminate"></md-progress-spinner>
 
     <md-dialog :md-active.sync="showDialog">
       <AddFood
@@ -49,10 +57,6 @@
         @onAdd="onAdd()"
       />
     </md-dialog>
-
-    <md-button v-if="!isAddDishMode" class="md-primary md-raised" @click="showDialog = true">
-      Show Dialog
-    </md-button>
 
     <md-snackbar
       md-position="left"
@@ -95,6 +99,7 @@
           name: '',
           kCalories: 0,
         },
+        isContentLoaded: false,
       };
     },
     mounted() {
@@ -104,6 +109,7 @@
       async getPosts() {
         const response = await CalculatorService.fetchPosts();
         this.posts = response.data.posts;
+        this.isContentLoaded = true;
       },
       onSelect(items) {
         this.selected = items;

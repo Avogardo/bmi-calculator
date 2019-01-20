@@ -1,0 +1,2890 @@
+db.getCollection('foods').insertMany([
+    {
+        "name": "agrest",
+        "kCalories": "61"
+    },
+    {
+        "name": "ajerkoniak (40 ml)",
+        "kCalories": "128"
+    },
+    {
+        "name": "ananas",
+        "kCalories": "32"
+    },
+    {
+        "name": "ananas z puszki, 1 plaster",
+        "kCalories": "38"
+    },
+    {
+        "name": "anchois filet, 1 szt",
+        "kCalories": "15"
+    },
+    {
+        "name": "antrykot wo³owy",
+        "kCalories": "159"
+    },
+    {
+        "name": "any¿ówka grecka Ouzo, 1 kieliszek (2 cl)",
+        "kCalories": "68"
+    },
+    {
+        "name": "arak 38%, 1 kieliszek (2 cl)",
+        "kCalories": "45"
+    },
+    {
+        "name": "arbuz",
+        "kCalories": "12"
+    },
+    {
+        "name": "awokado",
+        "kCalories": "118"
+    },
+    {
+        "name": "awokado, 1 œrednie (270 g)",
+        "kCalories": "320"
+    },
+    {
+        "name": "babeczka œmietankowa, 1 sztuka (40 g)",
+        "kCalories": "135"
+    },
+    {
+        "name": "babka piaskowa",
+        "kCalories": "432"
+    },
+    {
+        "name": "babka polska",
+        "kCalories": "368"
+    },
+    {
+        "name": "bagietka francuska ",
+        "kCalories": "214"
+    },
+    {
+        "name": "bajaderka, 1 sztuka (80 g)",
+        "kCalories": "317"
+    },
+    {
+        "name": "bak³a¿an",
+        "kCalories": "24"
+    },
+    {
+        "name": "bak³a¿an sma¿ony na oleju",
+        "kCalories": "300"
+    },
+    {
+        "name": "bambus konserwowy",
+        "kCalories": "39"
+    },
+    {
+        "name": "banan, 1 sztuka (200 g)",
+        "kCalories": "136"
+    },
+    {
+        "name": "baranina bez koœci, œrednio",
+        "kCalories": "234"
+    },
+    {
+        "name": "baranina, ³opatka",
+        "kCalories": "241"
+    },
+    {
+        "name": "baranina, udziec",
+        "kCalories": "195"
+    },
+    {
+        "name": "barszcz czerwony zabielany, 1 talerz (250 ml)",
+        "kCalories": "87"
+    },
+    {
+        "name": "barszcz z uszkami",
+        "kCalories": "350"
+    },
+    {
+        "name": "baton Bounty, 1 szt",
+        "kCalories": "145"
+    },
+    {
+        "name": "baton Duplo, 1 szt",
+        "kCalories": "100"
+    },
+    {
+        "name": "baton Kitekat, 1 szt",
+        "kCalories": "85"
+    },
+    {
+        "name": "baton Mars, 1 szt",
+        "kCalories": "275"
+    },
+    {
+        "name": "baton Milky Way, 1 szt",
+        "kCalories": "135"
+    },
+    {
+        "name": "baton Snickers, 1 szt",
+        "kCalories": "310"
+    },
+    {
+        "name": "ba¿ant",
+        "kCalories": "94"
+    },
+    {
+        "name": "beza, 1 szt",
+        "kCalories": "110"
+    },
+    {
+        "name": "bia³ko z 1 jaja",
+        "kCalories": "18"
+    },
+    {
+        "name": "bigos domowy",
+        "kCalories": "93"
+    },
+    {
+        "name": "bigos popularny",
+        "kCalories": "139"
+    },
+    {
+        "name": "bitki wieprzowe",
+        "kCalories": "197"
+    },
+    {
+        "name": "bitki wo³owe",
+        "kCalories": "104"
+    },
+    {
+        "name": "bliny ziemniaczane",
+        "kCalories": "253"
+    },
+    {
+        "name": "boczek faszerowany",
+        "kCalories": "502"
+    },
+    {
+        "name": "boczek wêdzony, solony",
+        "kCalories": "477"
+    },
+    {
+        "name": "boczek wieprzowy",
+        "kCalories": "517"
+    },
+    {
+        "name": "boæwina ",
+        "kCalories": "28"
+    },
+    {
+        "name": "boeuf Strogonow",
+        "kCalories": "222"
+    },
+    {
+        "name": "borówki",
+        "kCalories": "61"
+    },
+    {
+        "name": "bób",
+        "kCalories": "36"
+    },
+    {
+        "name": "broku³y ",
+        "kCalories": "27"
+    },
+    {
+        "name": "brukselka",
+        "kCalories": "44"
+    },
+    {
+        "name": "brukselka z wody z bu³k¹\n      tart¹ i mas³em",
+        "kCalories": "129"
+    },
+    {
+        "name": "bryndza, ser owczy ",
+        "kCalories": "250"
+    },
+    {
+        "name": "brzoskwinia ",
+        "kCalories": "53"
+    },
+    {
+        "name": "brzoskwinie suszone",
+        "kCalories": "295"
+    },
+    {
+        "name": "bu³ka grahamka, 1 szt (50 g)",
+        "kCalories": "106"
+    },
+    {
+        "name": "bu³ka kajzerka, 1 szt (50 g)",
+        "kCalories": "120"
+    },
+    {
+        "name": "bu³ka maœlana, 1 szt (50 g)",
+        "kCalories": "124"
+    },
+    {
+        "name": "bu³ka pszenna, 1 szt (50 g)",
+        "kCalories": "125"
+    },
+    {
+        "name": "bu³ka tarta",
+        "kCalories": "363"
+    },
+    {
+        "name": "buraki",
+        "kCalories": "46"
+    },
+    {
+        "name": "buraki æwik³owe",
+        "kCalories": "49"
+    },
+    {
+        "name": "buraki zasma¿ane",
+        "kCalories": "90"
+    },
+    {
+        "name": "cappuccino z mlekiem, 1 fili¿anka",
+        "kCalories": "60"
+    },
+    {
+        "name": "cebula",
+        "kCalories": "28"
+    },
+    {
+        "name": "cha³ka ",
+        "kCalories": "274"
+    },
+    {
+        "name": "cha³wa",
+        "kCalories": "531"
+    },
+    {
+        "name": "cheesburger, frytki,\n      szarlotka, du¿a cola, 1 zestaw",
+        "kCalories": "1200"
+    },
+    {
+        "name": "cheesburger, 1 porcja",
+        "kCalories": "308"
+    },
+    {
+        "name": "chipsy ziemniaczane",
+        "kCalories": "552"
+    },
+    {
+        "name": "chipsy ziemniaczane, 1 szt",
+        "kCalories": "10"
+    },
+    {
+        "name": "chleb graham, 1 kromka (50 g)",
+        "kCalories": "96"
+    },
+    {
+        "name": "chleb lecytynowy, 1 kromka (50 g)",
+        "kCalories": "120"
+    },
+    {
+        "name": "chleb pita",
+        "kCalories": "333"
+    },
+    {
+        "name": "chleb pszenny, 1 kromka (50 g)",
+        "kCalories": "108"
+    },
+    {
+        "name": "chleb pumpernikiel, 1 kromka (40 g)",
+        "kCalories": "96"
+    },
+    {
+        "name": "chleb razowy na miodzie, 1 kromka (50 g)",
+        "kCalories": "95"
+    },
+    {
+        "name": "chleb razowy, 1 kromka (50 g)",
+        "kCalories": "98"
+    },
+    {
+        "name": "chleb sitkowy, 1 kromka (50 g)",
+        "kCalories": "98"
+    },
+    {
+        "name": "chleb s³odowy, 1 kromka (50 g)",
+        "kCalories": "102"
+    },
+    {
+        "name": "chleb z otrêbami, 1 kromka (50 g)",
+        "kCalories": "103"
+    },
+    {
+        "name": "chleb zwyk³y, 1 kromka (50 g)",
+        "kCalories": "102"
+    },
+    {
+        "name": "chleb ¿ytni, 1 kromka (50 g)",
+        "kCalories": "110"
+    },
+    {
+        "name": "chrzan",
+        "kCalories": "68"
+    },
+    {
+        "name": "ciastka delicje szampañskie",
+        "kCalories": "400"
+    },
+    {
+        "name": "ciastka markizy",
+        "kCalories": "358"
+    },
+    {
+        "name": "ciastko karpatka",
+        "kCalories": "442"
+    },
+    {
+        "name": "ciastka tortowe z galaretk¹",
+        "kCalories": "311"
+    },
+    {
+        "name": "ciasto dro¿d¿owe ze œliwkami",
+        "kCalories": "178"
+    },
+    {
+        "name": "ciasto kokosowe",
+        "kCalories": "406"
+    },
+    {
+        "name": "ciasto kruche ze œliwkami",
+        "kCalories": "218"
+    },
+    {
+        "name": "cielêca pieczeñ duszona",
+        "kCalories": "240"
+    },
+    {
+        "name": "cielêca w¹tróbka",
+        "kCalories": "124"
+    },
+    {
+        "name": "cielêce klopsiki mielone",
+        "kCalories": "249"
+    },
+    {
+        "name": "cielêce nerki surowe",
+        "kCalories": "118"
+    },
+    {
+        "name": "cielêce serca",
+        "kCalories": "119"
+    },
+    {
+        "name": "cielêcina bez koœci",
+        "kCalories": "108"
+    },
+    {
+        "name": "cielêcina w potrawce",
+        "kCalories": "112"
+    },
+    {
+        "name": "cielêcina, nerkówka ",
+        "kCalories": "127"
+    },
+    {
+        "name": "cielêcina, ³opatka",
+        "kCalories": "129"
+    },
+    {
+        "name": "cielêcina, udziec",
+        "kCalories": "92"
+    },
+    {
+        "name": "cielêcy kotlet panierowany",
+        "kCalories": "426"
+    },
+    {
+        "name": "cielêcy mózg",
+        "kCalories": "99"
+    },
+    {
+        "name": "cielêcy ozór surowy",
+        "kCalories": "96"
+    },
+    {
+        "name": "Coca Cola light, 1 puszka (200 ml)",
+        "kCalories": "1"
+    },
+    {
+        "name": "Coca Cola, 1 puszka (200 ml)",
+        "kCalories": "82"
+    },
+    {
+        "name": "croissant, 1 sztuka (60 g)",
+        "kCalories": "282"
+    },
+    {
+        "name": "crunchips",
+        "kCalories": "51"
+    },
+    {
+        "name": "cukier bia³y",
+        "kCalories": "400"
+    },
+    {
+        "name": "cukier bia³y, 1 ³y¿eczka (10 g)",
+        "kCalories": "40"
+    },
+    {
+        "name": "cukier waniliowy, 1 paczka",
+        "kCalories": "32"
+    },
+    {
+        "name": "cukierki M&M's",
+        "kCalories": "490"
+    },
+    {
+        "name": "cukierki",
+        "kCalories": "390"
+    },
+    {
+        "name": "cukinia",
+        "kCalories": "16"
+    },
+    {
+        "name": "cykoria (75 g)",
+        "kCalories": "11"
+    },
+    {
+        "name": "cynamon",
+        "kCalories": "104"
+    },
+    {
+        "name": "cytryna, 1 œrednia (150 g)",
+        "kCalories": "36"
+    },
+    {
+        "name": "czarne jagody",
+        "kCalories": "61"
+    },
+    {
+        "name": "czekolada, 1 kostka",
+        "kCalories": "22"
+    },
+    {
+        "name": "czekolada do picia w proszku,\n      1 fili¿anka",
+        "kCalories": "140"
+    },
+    {
+        "name": "czekolada gorzka, 1 tabliczka",
+        "kCalories": "520"
+    },
+    {
+        "name": "czekolada kremowa, 1 tabliczka",
+        "kCalories": "560"
+    },
+    {
+        "name": "czekolada Milka mleczna, 1 tabliczka",
+        "kCalories": "539"
+    },
+    {
+        "name": "czekolada Milka z jogurtem, 1 tabliczka",
+        "kCalories": "585"
+    },
+    {
+        "name": "czekolada Milka z truskawkami, 1 tabliczka",
+        "kCalories": "578"
+    },
+    {
+        "name": "czekolada Milka ze wiœniami, 1 tabliczka",
+        "kCalories": "577"
+    },
+    {
+        "name": "czekolada mleczna, 1 tabliczka",
+        "kCalories": "560"
+    },
+    {
+        "name": "czekoladka Ferrero Rocher, 1 szt",
+        "kCalories": "75"
+    },
+    {
+        "name": "czekoladka Mon Cheri, 1 szt",
+        "kCalories": "50"
+    },
+    {
+        "name": "czekoladowa posypka do deserów",
+        "kCalories": "421"
+    },
+    {
+        "name": "czekoladowy mus",
+        "kCalories": "219"
+    },
+    {
+        "name": "czereœnie",
+        "kCalories": "48"
+    },
+    {
+        "name": "czosnek, 1 z¹bek (15 g)",
+        "kCalories": "3"
+    },
+    {
+        "name": "æwik³a",
+        "kCalories": "49"
+    },
+    {
+        "name": "daktyle suszone",
+        "kCalories": "272"
+    },
+    {
+        "name": "dorsz po grecku, 1 porcja",
+        "kCalories": "230"
+    },
+    {
+        "name": "dorsz w sosie pomidorowym, konserwa",
+        "kCalories": "102"
+    },
+    {
+        "name": "dorsz wêdzony",
+        "kCalories": "52"
+    },
+    {
+        "name": "dorsz, filety sma¿one, panierowane",
+        "kCalories": "278"
+    },
+    {
+        "name": "dorsz, kotlet mielony",
+        "kCalories": "260"
+    },
+    {
+        "name": "dra¿e arachidowe Wedel",
+        "kCalories": "547"
+    },
+    {
+        "name": "drobiowa w¹tróbka",
+        "kCalories": "134"
+    },
+    {
+        "name": "drobiowe serca",
+        "kCalories": "119"
+    },
+    {
+        "name": "drops owocowy, 1 szt",
+        "kCalories": "18"
+    },
+    {
+        "name": "dro¿d¿e prasowane",
+        "kCalories": "130"
+    },
+    {
+        "name": "dro¿d¿e suszone, 1 paczka",
+        "kCalories": "26"
+    },
+    {
+        "name": "dro¿d¿ówka z makiem",
+        "kCalories": "345"
+    },
+    {
+        "name": "dro¿d¿ówka z marmolad¹",
+        "kCalories": "323"
+    },
+    {
+        "name": "dynia",
+        "kCalories": "23"
+    },
+    {
+        "name": "dzik, szynka",
+        "kCalories": "93"
+    },
+    {
+        "name": "d¿em œliwkowy, niskos³odzony, 1 ³y¿ka (20 g)",
+        "kCalories": "31"
+    },
+    {
+        "name": "d¿em truskawkowy, wysokos³odzony, 1 ³y¿ka (20 g)",
+        "kCalories": "50"
+    },
+    {
+        "name": "d¿em z czarnej porzeczki, niskos³odzony, 1 ³y¿ka (20 g)",
+        "kCalories": "32"
+    },
+    {
+        "name": "d¿emy niskos³odzone, 1 ³y¿ka (20 g)",
+        "kCalories": "33"
+    },
+    {
+        "name": "d¿emy wysokos³odzone, 1 ³y¿ka (20 g)",
+        "kCalories": "50"
+    },
+    {
+        "name": "eklerka z kremem (40 g)",
+        "kCalories": "120"
+    },
+    {
+        "name": "endywia (sa³ata)",
+        "kCalories": "17"
+    },
+    {
+        "name": "Fanta (200 ml)",
+        "kCalories": "82"
+    },
+    {
+        "name": "fasola bia³a, sucha",
+        "kCalories": "346"
+    },
+    {
+        "name": "fasola czarna, sucha",
+        "kCalories": "345"
+    },
+    {
+        "name": "fasola kolorowa, sucha",
+        "kCalories": "343"
+    },
+    {
+        "name": "fasola mungo",
+        "kCalories": "329"
+    },
+    {
+        "name": "fasolka ciêta w zalewie, konserwa",
+        "kCalories": "20"
+    },
+    {
+        "name": "fasolka po bretoñsku",
+        "kCalories": "154"
+    },
+    {
+        "name": "fasolka szparagowa",
+        "kCalories": "36"
+    },
+    {
+        "name": "fasolka szparagowa z bu³k¹ tart¹",
+        "kCalories": "115"
+    },
+    {
+        "name": "faworki",
+        "kCalories": "476"
+    },
+    {
+        "name": "feta ser grecki",
+        "kCalories": "250"
+    },
+    {
+        "name": "figi suszone",
+        "kCalories": "300"
+    },
+    {
+        "name": "figi œwie¿e (65 g)",
+        "kCalories": "47"
+    },
+    {
+        "name": "fish and chips (ryba i frytki), 1 porcja",
+        "kCalories": "651"
+    },
+    {
+        "name": "flaki surowe",
+        "kCalories": "84"
+    },
+    {
+        "name": "flaki",
+        "kCalories": "320"
+    },
+    {
+        "name": "fl¹dra wêdzona",
+        "kCalories": "53"
+    },
+    {
+        "name": "frytki ziemniaczane podsma¿ane mro¿one",
+        "kCalories": "226"
+    },
+    {
+        "name": "galaretka owocowa w proszku",
+        "kCalories": "316"
+    },
+    {
+        "name": "galaretka z nó¿ek wieprzowych",
+        "kCalories": "206"
+    },
+    {
+        "name": "gêœ, tuszka",
+        "kCalories": "140"
+    },
+    {
+        "name": "gin z tonikiem, 1 kieliszek",
+        "kCalories": "170"
+    },
+    {
+        "name": "gin, (20 cl)",
+        "kCalories": "60"
+    },
+    {
+        "name": "go³¹bki w sosie pomidorowym",
+        "kCalories": "117"
+    },
+    {
+        "name": "granat (275 g)",
+        "kCalories": "104"
+    },
+    {
+        "name": "grejfrut (250 g)",
+        "kCalories": "70"
+    },
+    {
+        "name": "groch, suchy",
+        "kCalories": "354"
+    },
+    {
+        "name": "groszek w zalewie, konserwa",
+        "kCalories": "79"
+    },
+    {
+        "name": "groszek z marchewk¹",
+        "kCalories": "73"
+    },
+    {
+        "name": "groszek zielony (str¹ki)",
+        "kCalories": "43"
+    },
+    {
+        "name": "groszek zielony z mas³em",
+        "kCalories": "99"
+    },
+    {
+        "name": "gruszka (120 g)",
+        "kCalories": "56"
+    },
+    {
+        "name": "gruszki suszone",
+        "kCalories": "328"
+    },
+    {
+        "name": "gruszki w syropie w puszce",
+        "kCalories": "50"
+    },
+    {
+        "name": "grzyby suszone",
+        "kCalories": "350"
+    },
+    {
+        "name": "gulasz sojowy z jarzynami",
+        "kCalories": "75"
+    },
+    {
+        "name": "gulasz wieprzowo-wo³owy",
+        "kCalories": "197"
+    },
+    {
+        "name": "gulasz wo³owy",
+        "kCalories": "149"
+    },
+    {
+        "name": "guma do ¿ucia, 1 listek",
+        "kCalories": "7"
+    },
+    {
+        "name": "hamburger Bic Mac",
+        "kCalories": "510"
+    },
+    {
+        "name": "hamburger Royal",
+        "kCalories": "527"
+    },
+    {
+        "name": "hamburger rybny",
+        "kCalories": "423"
+    },
+    {
+        "name": "hamburger z serem",
+        "kCalories": "308"
+    },
+    {
+        "name": "hamburger",
+        "kCalories": "255"
+    },
+    {
+        "name": "herbata mro¿ona Lipton Ice Tea",
+        "kCalories": "33"
+    },
+    {
+        "name": "herbatnik, 1 szt",
+        "kCalories": "45"
+    },
+    {
+        "name": "herbatniki w czekoladzie",
+        "kCalories": "462"
+    },
+    {
+        "name": "homar",
+        "kCalories": "91"
+    },
+    {
+        "name": "indyk, bia³e miêso ze skór¹",
+        "kCalories": "159"
+    },
+    {
+        "name": "indyk, filet",
+        "kCalories": "109"
+    },
+    {
+        "name": "indyk, tuszka",
+        "kCalories": "56"
+    },
+    {
+        "name": "irysy",
+        "kCalories": "420"
+    },
+    {
+        "name": "jab³ecznik (40 g)",
+        "kCalories": "110"
+    },
+    {
+        "name": "jab³ka suszone",
+        "kCalories": "341"
+    },
+    {
+        "name": "jab³ko œwie¿e",
+        "kCalories": "36"
+    },
+    {
+        "name": "jaja przepiórcze",
+        "kCalories": "149"
+    },
+    {
+        "name": "jaja sadzone",
+        "kCalories": "180"
+    },
+    {
+        "name": "jajecznica na s³oninie",
+        "kCalories": "130"
+    },
+    {
+        "name": "jajo, 1 szt",
+        "kCalories": "ok.80"
+    },
+    {
+        "name": "jajo, ¿ó³tko",
+        "kCalories": "64"
+    },
+    {
+        "name": "jarmu¿",
+        "kCalories": "49"
+    },
+    {
+        "name": "jarzynowa zupa",
+        "kCalories": "33"
+    },
+    {
+        "name": "jarzynowa zupa zabielana",
+        "kCalories": "48"
+    },
+    {
+        "name": "je¿yny",
+        "kCalories": "63"
+    },
+    {
+        "name": "jogurt 2% t³uszczu, 1 szklanka (250 ml)",
+        "kCalories": "155"
+    },
+    {
+        "name": "jogurt 2,5% t³uszczu , 1 szklanka (250 ml)",
+        "kCalories": "175"
+    },
+    {
+        "name": "jogurt Danone 0% t³uszczu z owocami, 1 szklanka (250\n      ml) ",
+        "kCalories": "48"
+    },
+    {
+        "name": "jogurt naturalny 2,5% t³uszczu, 1 szklanka (250 ml)",
+        "kCalories": "150"
+    },
+    {
+        "name": "jogurt owocowy 1,5% t³uszczu, 1 szklanka (250 ml)",
+        "kCalories": "235"
+    },
+    {
+        "name": "jogurt z kawa³kami owoców Danone",
+        "kCalories": "103"
+    },
+    {
+        "name": "kabaczek",
+        "kCalories": "20"
+    },
+    {
+        "name": "kaczka, miêso z piersi",
+        "kCalories": "294"
+    },
+    {
+        "name": "kaczka, miêso z udka",
+        "kCalories": "331"
+    },
+    {
+        "name": "kaczka, tuszka",
+        "kCalories": "198"
+    },
+    {
+        "name": "kakao na mleku (250 ml)",
+        "kCalories": "179"
+    },
+    {
+        "name": "kakao, 1 ³y¿eczka",
+        "kCalories": "21"
+    },
+    {
+        "name": "kalafior",
+        "kCalories": "16"
+    },
+    {
+        "name": "kalafior z wody z bu³k¹ tart¹",
+        "kCalories": "70"
+    },
+    {
+        "name": "kalafior (500 g)",
+        "kCalories": "80"
+    },
+    {
+        "name": "kalarepa",
+        "kCalories": "24"
+    },
+    {
+        "name": "kapary, ³y¿ka sto³owa",
+        "kCalories": "3"
+    },
+    {
+        "name": "kapusta bia³a",
+        "kCalories": "28"
+    },
+    {
+        "name": "kapusta bia³a zasma¿ana",
+        "kCalories": "77"
+    },
+    {
+        "name": "kapusta bia³a surówka",
+        "kCalories": "76"
+    },
+    {
+        "name": "kapusta czerwona",
+        "kCalories": "36"
+    },
+    {
+        "name": "kapusta czerwona sa³atka",
+        "kCalories": "99"
+    },
+    {
+        "name": "kapusta kiszona",
+        "kCalories": "16"
+    },
+    {
+        "name": "kapusta kwaszona surówka",
+        "kCalories": "77"
+    },
+    {
+        "name": "kapusta w³oska",
+        "kCalories": "32"
+    },
+    {
+        "name": "kapuœniak z kapusty kwaszonej",
+        "kCalories": "50"
+    },
+    {
+        "name": "kapuœniak ze s³odkiej kapusty",
+        "kCalories": "68"
+    },
+    {
+        "name": "karczochy (200 g)",
+        "kCalories": "122"
+    },
+    {
+        "name": "karmelki light",
+        "kCalories": "185"
+    },
+    {
+        "name": "karmelki tradycyjne",
+        "kCalories": "392"
+    },
+    {
+        "name": "karp w galarecie",
+        "kCalories": "127"
+    },
+    {
+        "name": "karp z wody",
+        "kCalories": "100"
+    },
+    {
+        "name": "karp, czêœci jadalne",
+        "kCalories": "102"
+    },
+    {
+        "name": "kasza gryczana na sypko",
+        "kCalories": "141"
+    },
+    {
+        "name": "kasza gryczana sucha",
+        "kCalories": "359"
+    },
+    {
+        "name": "kasza jêczmienna per³owa sucha",
+        "kCalories": "367"
+    },
+    {
+        "name": "kasza jêczmienna pêczak sucha",
+        "kCalories": "346"
+    },
+    {
+        "name": "kasza manna sucha",
+        "kCalories": "353"
+    },
+    {
+        "name": "kasza per³owa na sypko",
+        "kCalories": "126"
+    },
+    {
+        "name": "kasza z pszenicy kus kus sucha",
+        "kCalories": "360"
+    },
+    {
+        "name": "kaszanka",
+        "kCalories": "250"
+    },
+    {
+        "name": "kasztany œwie¿e ",
+        "kCalories": "194"
+    },
+    {
+        "name": "kawior prawdziwy, 1 ³y¿eczka",
+        "kCalories": "13"
+    },
+    {
+        "name": "kefir 1,5% t³uszczu, 1 szklanka (250 ml)",
+        "kCalories": "112"
+    },
+    {
+        "name": "kefir 2% t³uszczu, 1 szklanka (250 ml)",
+        "kCalories": "115"
+    },
+    {
+        "name": "keks owocowy",
+        "kCalories": "378"
+    },
+    {
+        "name": "ketchup pomidorowy Heinz",
+        "kCalories": "101"
+    },
+    {
+        "name": "ketchup pomidorowy, 1 ³y¿ka",
+        "kCalories": "20"
+    },
+    {
+        "name": "kie³basa husarska",
+        "kCalories": "462"
+    },
+    {
+        "name": "kie³basa kabanos",
+        "kCalories": "319"
+    },
+    {
+        "name": "kie³basa krakowska",
+        "kCalories": "145"
+    },
+    {
+        "name": "kie³basa krakowska parzona",
+        "kCalories": "143"
+    },
+    {
+        "name": "kie³basa krakowska sucha",
+        "kCalories": "352"
+    },
+    {
+        "name": "kie³basa metka",
+        "kCalories": "347"
+    },
+    {
+        "name": "kie³basa myœliwska",
+        "kCalories": "395"
+    },
+    {
+        "name": "kie³basa parówkowa",
+        "kCalories": "310"
+    },
+    {
+        "name": "kie³basa pasztetowa",
+        "kCalories": "348"
+    },
+    {
+        "name": "kie³basa salami",
+        "kCalories": "420"
+    },
+    {
+        "name": "kie³basa szynkowa",
+        "kCalories": "154"
+    },
+    {
+        "name": "kie³basa zwyczajna",
+        "kCalories": "210"
+    },
+    {
+        "name": "kie³ki lucerny",
+        "kCalories": "30"
+    },
+    {
+        "name": "kie³ki sojowe",
+        "kCalories": "29"
+    },
+    {
+        "name": "kie³ki sojowe z puszki",
+        "kCalories": "35"
+    },
+    {
+        "name": "kiwi (80 g)",
+        "kCalories": "40"
+    },
+    {
+        "name": "klopsiki cielêce mielone",
+        "kCalories": "250"
+    },
+    {
+        "name": "kluski k³adzione",
+        "kCalories": "168"
+    },
+    {
+        "name": "kluski lane",
+        "kCalories": "96"
+    },
+    {
+        "name": "knedle ze œliwkami",
+        "kCalories": "170"
+    },
+    {
+        "name": "kompot jab³kowy, 1 szklanka (250 ml)",
+        "kCalories": "200"
+    },
+    {
+        "name": "kompot truskawkowy, 1 szklanka (250 ml)",
+        "kCalories": "200"
+    },
+    {
+        "name": "koncentrat barszczu czerwonego, 1 ³y¿ka",
+        "kCalories": "15"
+    },
+    {
+        "name": "koncentrat pomidorowy 30%",
+        "kCalories": "110"
+    },
+    {
+        "name": "koniak (4 cl)",
+        "kCalories": "112"
+    },
+    {
+        "name": "konina bez koœci",
+        "kCalories": "108"
+    },
+    {
+        "name": "konserwa luncheon meat",
+        "kCalories": "216"
+    },
+    {
+        "name": "konserwa turystyczna",
+        "kCalories": "217"
+    },
+    {
+        "name": "koperek (35 g)",
+        "kCalories": "18"
+    },
+    {
+        "name": "kopytka z mas³em",
+        "kCalories": "152"
+    },
+    {
+        "name": "kotlet z drobiu panierowany",
+        "kCalories": "380"
+    },
+    {
+        "name": "kotlet schabowy",
+        "kCalories": "237"
+    },
+    {
+        "name": "kotlety mielone, wieprzowo-wo³owe",
+        "kCalories": "287"
+    },
+    {
+        "name": "kraby",
+        "kCalories": "84"
+    },
+    {
+        "name": "krakers, 1 szt",
+        "kCalories": "10"
+    },
+    {
+        "name": "krewetki",
+        "kCalories": "106"
+    },
+    {
+        "name": "królik miêso bez koœci",
+        "kCalories": "128"
+    },
+    {
+        "name": "krówki, cukierki",
+        "kCalories": "419"
+    },
+    {
+        "name": "krupnik z kaszy jêczmiennej",
+        "kCalories": "44"
+    },
+    {
+        "name": "kukurydza w puszce",
+        "kCalories": "23"
+    },
+    {
+        "name": "kukurydza, 1 kolba (150 g)",
+        "kCalories": "220"
+    },
+    {
+        "name": "kukurydza, nasiona œwie¿e",
+        "kCalories": "86"
+    },
+    {
+        "name": "kukurydziane chrupki",
+        "kCalories": "348"
+    },
+    {
+        "name": "kura w galarecie",
+        "kCalories": "194"
+    },
+    {
+        "name": "kura, tuszka",
+        "kCalories": "142"
+    },
+    {
+        "name": "kurczak gotowany w jarzynach",
+        "kCalories": "108"
+    },
+    {
+        "name": "kurczak pieczony",
+        "kCalories": "182"
+    },
+    {
+        "name": "kurczak, 1 skrzyde³ko surowe (90 g)",
+        "kCalories": "109"
+    },
+    {
+        "name": "kurczak, 1 udko surowe (120 g)",
+        "kCalories": "194"
+    },
+    {
+        "name": "kurczak, bia³e miêso bez skóry",
+        "kCalories": "114"
+    },
+    {
+        "name": "kuropatwa",
+        "kCalories": "53"
+    },
+    {
+        "name": "kutia",
+        "kCalories": "700"
+    },
+    {
+        "name": "leszcz, czêœci jadalne",
+        "kCalories": "102"
+    },
+    {
+        "name": "likier curacao (2 cl)",
+        "kCalories": "80"
+    },
+    {
+        "name": "lin czêœci jadalne",
+        "kCalories": "74"
+    },
+    {
+        "name": "lody bakaliowe",
+        "kCalories": "216"
+    },
+    {
+        "name": "lody Bounty, 1 szt",
+        "kCalories": "173"
+    },
+    {
+        "name": "lody kakaowe",
+        "kCalories": "166"
+    },
+    {
+        "name": "lody Magnum bia³e, 1 szt",
+        "kCalories": "290"
+    },
+    {
+        "name": "lody Magnum w czekoladzie, 1 szt",
+        "kCalories": "304"
+    },
+    {
+        "name": "lody Mars, 1 szt",
+        "kCalories": "172"
+    },
+    {
+        "name": "lody Milky Way, 1 szt",
+        "kCalories": "151"
+    },
+    {
+        "name": "lody mleczne",
+        "kCalories": "110"
+    },
+    {
+        "name": "lody mleczne, 1 kulka",
+        "kCalories": "28"
+    },
+    {
+        "name": "lody mleczno-owocowe, 1 kulka",
+        "kCalories": "29"
+    },
+    {
+        "name": "lody Snickers, 1 szt",
+        "kCalories": "215"
+    },
+    {
+        "name": "lody œmietankowe, 1 kulka",
+        "kCalories": "39"
+    },
+    {
+        "name": "lukier ciemny",
+        "kCalories": "613"
+    },
+    {
+        "name": "lukier jasny",
+        "kCalories": "628"
+    },
+    {
+        "name": "³osoœ czêœci jadalne ",
+        "kCalories": "202"
+    },
+    {
+        "name": "³osoœ wêdzony",
+        "kCalories": "180"
+    },
+    {
+        "name": "majonez, 1 czubata ³y¿ka",
+        "kCalories": "155"
+    },
+    {
+        "name": "mak ",
+        "kCalories": "545"
+    },
+    {
+        "name": "makaron gotowany (dwujajeczny)",
+        "kCalories": "105"
+    },
+    {
+        "name": "makowiec",
+        "kCalories": "348"
+    },
+    {
+        "name": "makrela w sosie w³asnym",
+        "kCalories": "167"
+    },
+    {
+        "name": "makrela wêdzona",
+        "kCalories": "155"
+    },
+    {
+        "name": "makrela czêœci jadalne",
+        "kCalories": "180"
+    },
+    {
+        "name": "Malaga (5 cl)",
+        "kCalories": "80"
+    },
+    {
+        "name": "maliny",
+        "kCalories": "65"
+    },
+    {
+        "name": "ma³¿e",
+        "kCalories": "88"
+    },
+    {
+        "name": "mandarynki w syropie",
+        "kCalories": "52"
+    },
+    {
+        "name": "mandarynki we w³asnym soku",
+        "kCalories": "32"
+    },
+    {
+        "name": "mandarynki (45 g)",
+        "kCalories": "13"
+    },
+    {
+        "name": "mango w syropie",
+        "kCalories": "77"
+    },
+    {
+        "name": "mango (300 g)",
+        "kCalories": "132"
+    },
+    {
+        "name": "marchew",
+        "kCalories": "24"
+    },
+    {
+        "name": "margaryna Bona",
+        "kCalories": "450"
+    },
+    {
+        "name": "margaryna Kama",
+        "kCalories": "450"
+    },
+    {
+        "name": "margaryna Kasia",
+        "kCalories": "720"
+    },
+    {
+        "name": "margaryna Medium",
+        "kCalories": "540"
+    },
+    {
+        "name": "margaryna Maryna",
+        "kCalories": "720"
+    },
+    {
+        "name": "margaryna Mleczna",
+        "kCalories": "720"
+    },
+    {
+        "name": "margaryna Palma",
+        "kCalories": "720"
+    },
+    {
+        "name": "margaryna Rama",
+        "kCalories": "630"
+    },
+    {
+        "name": "margaryna Sawa",
+        "kCalories": "720"
+    },
+    {
+        "name": "margaryna S³oneczna",
+        "kCalories": "720"
+    },
+    {
+        "name": "margaryna Œniadaniowa",
+        "kCalories": "540"
+    },
+    {
+        "name": "margaryna Udana",
+        "kCalories": "720"
+    },
+    {
+        "name": "margaryna Zwyk³a",
+        "kCalories": "720"
+    },
+    {
+        "name": "marmolada, 1 ³y¿ka",
+        "kCalories": "23"
+    },
+    {
+        "name": "Marsala (5 cl)",
+        "kCalories": "55"
+    },
+    {
+        "name": "Martini wytrawne (5 cl)",
+        "kCalories": "60"
+    },
+    {
+        "name": "mas³o Finea Mix",
+        "kCalories": "720"
+    },
+    {
+        "name": "mas³o Masmix",
+        "kCalories": "540"
+    },
+    {
+        "name": "mas³o orzechowe",
+        "kCalories": "573"
+    },
+    {
+        "name": "mas³o roœlinne MR",
+        "kCalories": "747"
+    },
+    {
+        "name": "mas³o roœlinne Nova",
+        "kCalories": "450"
+    },
+    {
+        "name": "maœlak",
+        "kCalories": "29"
+    },
+    {
+        "name": "maœlanka 1,5% t³uszczu, 1 szklanka (250 ml)",
+        "kCalories": "70"
+    },
+    {
+        "name": "m¹ka gryczana",
+        "kCalories": "333"
+    },
+    {
+        "name": "m¹ka pszenna krupczatka",
+        "kCalories": "345"
+    },
+    {
+        "name": "m¹ka pszenna poznañska",
+        "kCalories": "345"
+    },
+    {
+        "name": "m¹ka pszenna wroc³awska",
+        "kCalories": "341"
+    },
+    {
+        "name": "m¹ka pszenna, 1 ³y¿ka",
+        "kCalories": "35"
+    },
+    {
+        "name": "m¹ka ry¿owa",
+        "kCalories": "383"
+    },
+    {
+        "name": "m¹ka sojowa",
+        "kCalories": "421"
+    },
+    {
+        "name": "m¹ka ziemniaczana",
+        "kCalories": "340"
+    },
+    {
+        "name": "melon",
+        "kCalories": "16"
+    },
+    {
+        "name": "mielonka wieprzowa, konserwa",
+        "kCalories": "237"
+    },
+    {
+        "name": "migda³y s³odkie",
+        "kCalories": "332"
+    },
+    {
+        "name": "mintaj czêœci jadalne",
+        "kCalories": "75"
+    },
+    {
+        "name": "miód pszczeli",
+        "kCalories": "320"
+    },
+    {
+        "name": "miód pszczeli, 1 ³y¿eczka",
+        "kCalories": "48"
+    },
+    {
+        "name": "miód sztuczny",
+        "kCalories": "320"
+    },
+    {
+        "name": "miœki ¿elatynowe",
+        "kCalories": "390"
+    },
+    {
+        "name": "mizeria ze œmietan¹",
+        "kCalories": "35"
+    },
+    {
+        "name": "mleko 0,5% t³uszczu, 1 szklanka (250 ml)",
+        "kCalories": "88"
+    },
+    {
+        "name": "mleko 2% t³uszczu, 1 szklanka (250 ml)",
+        "kCalories": "115"
+    },
+    {
+        "name": "mleko 3,2% t³uszczu, 1 szklanka (250 ml)",
+        "kCalories": "145"
+    },
+    {
+        "name": "mleko kozie, 1 szklanka (250 ml)",
+        "kCalories": "180"
+    },
+    {
+        "name": "mleko sojowe, 1 szklanka (250 ml)",
+        "kCalories": "82"
+    },
+    {
+        "name": "mleko zagêszczone nies³odzone, 1 ³y¿ka",
+        "kCalories": "34"
+    },
+    {
+        "name": "mleko zagêszczone s³odzone, 1 ³y¿ka",
+        "kCalories": "81"
+    },
+    {
+        "name": "mleko zsiad³e, 1 szklanka (250 ml) ",
+        "kCalories": "115"
+    },
+    {
+        "name": "morele œwie¿e (40 g)",
+        "kCalories": "19"
+    },
+    {
+        "name": "morele w syropie w puszce",
+        "kCalories": "34"
+    },
+    {
+        "name": "morszczuk czêœci jadalne",
+        "kCalories": "70"
+    },
+    {
+        "name": "mortadela",
+        "kCalories": "187"
+    },
+    {
+        "name": "musli z owocami suszonymi Dr. Oetker z mlekiem (60 ml)",
+        "kCalories": "175"
+    },
+    {
+        "name": "musli z owocami tropikalnymi Nestle Pacific",
+        "kCalories": "370"
+    },
+    {
+        "name": "musztarda, 1 ³y¿ka ",
+        "kCalories": "15"
+    },
+    {
+        "name": "naleœniki z kapust¹ ",
+        "kCalories": "156"
+    },
+    {
+        "name": "naleœniki z serem",
+        "kCalories": "240"
+    },
+    {
+        "name": "napoleonki (60 g)",
+        "kCalories": "194"
+    },
+    {
+        "name": "nektarynka (150 g)",
+        "kCalories": "67"
+    },
+    {
+        "name": "Nutella",
+        "kCalories": "580"
+    },
+    {
+        "name": "ogórek",
+        "kCalories": "8"
+    },
+    {
+        "name": "ogórek kiszony",
+        "kCalories": "12"
+    },
+    {
+        "name": "ogórek konserwowy",
+        "kCalories": "16"
+    },
+    {
+        "name": "okoñ, czêœci jadalne",
+        "kCalories": "83"
+    },
+    {
+        "name": "oleje roœlinne",
+        "kCalories": "900"
+    },
+    {
+        "name": "oliwa z oliwek",
+        "kCalories": "900"
+    },
+    {
+        "name": "oliwki czarne, marynowane",
+        "kCalories": "350"
+    },
+    {
+        "name": "oliwki zielone, marynowane",
+        "kCalories": "140"
+    },
+    {
+        "name": "omlet bez dodatków, 1 szt",
+        "kCalories": "380"
+    },
+    {
+        "name": "omlet z dodatkami, 1 szt",
+        "kCalories": "700-800"
+    },
+    {
+        "name": "orzechy nerkowce, obrane",
+        "kCalories": "560"
+    },
+    {
+        "name": "orzechy laskowe, obrane",
+        "kCalories": "634"
+    },
+    {
+        "name": "orzechy pecan, obrane",
+        "kCalories": "687"
+    },
+    {
+        "name": "orzechy pistacjowe, obrane",
+        "kCalories": "577"
+    },
+    {
+        "name": "orzechy w czekoladzie Wedel",
+        "kCalories": "584"
+    },
+    {
+        "name": "orzechy w³oskie, obrane",
+        "kCalories": "650"
+    },
+    {
+        "name": "orzechy ziemne, obrane",
+        "kCalories": "582"
+    },
+    {
+        "name": "ostrygi",
+        "kCalories": "69"
+    },
+    {
+        "name": "otrêby pszenne",
+        "kCalories": "189"
+    },
+    {
+        "name": "paluszki s³one",
+        "kCalories": "385"
+    },
+    {
+        "name": "papaja (200 g)",
+        "kCalories": "80"
+    },
+    {
+        "name": "papryka konserwowa",
+        "kCalories": "35"
+    },
+    {
+        "name": "papryka nadziewana miêsem i ry¿em",
+        "kCalories": "172"
+    },
+    {
+        "name": "papryka (80 g)",
+        "kCalories": "19"
+    },
+    {
+        "name": "parówki, 1 szt",
+        "kCalories": "132"
+    },
+    {
+        "name": "p¹czek, 1 szt",
+        "kCalories": "200"
+    },
+    {
+        "name": "pernod (2 cl)",
+        "kCalories": "68"
+    },
+    {
+        "name": "pestki dyni",
+        "kCalories": "553"
+    },
+    {
+        "name": "pestki s³onecznika",
+        "kCalories": "560"
+    },
+    {
+        "name": "pieczarki",
+        "kCalories": "28"
+    },
+    {
+        "name": "pieczeñ rzymska",
+        "kCalories": "204"
+    },
+    {
+        "name": "pieczywo chrupkie z sezamem 1 kromka",
+        "kCalories": "50"
+    },
+    {
+        "name": "pieczywo chrupkie 1 kromka",
+        "kCalories": "37"
+    },
+    {
+        "name": "pierniki",
+        "kCalories": "366"
+    },
+    {
+        "name": "pierniki w czekoladzie",
+        "kCalories": "410"
+    },
+    {
+        "name": "pierogi leniwe",
+        "kCalories": "217"
+    },
+    {
+        "name": "pierogi leniwe mro¿one",
+        "kCalories": "162"
+    },
+    {
+        "name": "pierogi miêsne mro¿one",
+        "kCalories": "268"
+    },
+    {
+        "name": "pierogi ruskie",
+        "kCalories": "167"
+    },
+    {
+        "name": "pierogi ruskie mro¿one",
+        "kCalories": "218"
+    },
+    {
+        "name": "pierogi z kapust¹ mro¿one",
+        "kCalories": "210"
+    },
+    {
+        "name": "pierogi z kapust¹ i grzybami",
+        "kCalories": "250"
+    },
+    {
+        "name": "pierogi z miêsem gotowane ze skwarkami i cebul¹",
+        "kCalories": "207"
+    },
+    {
+        "name": "pierogi z serem",
+        "kCalories": "238"
+    },
+    {
+        "name": "pierogi z truskawkami",
+        "kCalories": "247"
+    },
+    {
+        "name": "pietruszka korzeñ",
+        "kCalories": "52"
+    },
+    {
+        "name": "pietruszka, natka (35 g)",
+        "kCalories": "21"
+    },
+    {
+        "name": "pigwa",
+        "kCalories": "35"
+    },
+    {
+        "name": "pikling wêdzony",
+        "kCalories": "137"
+    },
+    {
+        "name": "piwo Guiness (0,33 l)",
+        "kCalories": "216"
+    },
+    {
+        "name": "piwo jasne (0,5 l)",
+        "kCalories": "230"
+    },
+    {
+        "name": "piwo Pilsner (0,33 l)",
+        "kCalories": "144"
+    },
+    {
+        "name": "piwo s³odowe (0,33 l)",
+        "kCalories": "152"
+    },
+    {
+        "name": "placek dro¿d¿owy z kruszonk¹",
+        "kCalories": "425"
+    },
+    {
+        "name": "p³atki kukurydziane, 1 ³y¿ka",
+        "kCalories": "12"
+    },
+    {
+        "name": "p³atki owsiane, 1 ³y¿ka",
+        "kCalories": "23"
+    },
+    {
+        "name": "polêdwica wêdzona, 1 plasterek (20 g)",
+        "kCalories": "28"
+    },
+    {
+        "name": "pomarañcza (150 g)",
+        "kCalories": "54"
+    },
+    {
+        "name": "pomidor (80 g)",
+        "kCalories": "19"
+    },
+    {
+        "name": "pomidory w puszce",
+        "kCalories": "16"
+    },
+    {
+        "name": "popcorn",
+        "kCalories": "150"
+    },
+    {
+        "name": "pory",
+        "kCalories": "24"
+    },
+    {
+        "name": "porzeczki bia³e",
+        "kCalories": "56"
+    },
+    {
+        "name": "porzeczki czarne",
+        "kCalories": "81"
+    },
+    {
+        "name": "porzeczki czerwone",
+        "kCalories": "56"
+    },
+    {
+        "name": "powid³a œliwkowe, 1 ³y¿eczka",
+        "kCalories": "22"
+    },
+    {
+        "name": "poziomki",
+        "kCalories": "36"
+    },
+    {
+        "name": "przepiórka, miêso bez koœci",
+        "kCalories": "193"
+    },
+    {
+        "name": "pstr¹g czêœci jadalne",
+        "kCalories": "96"
+    },
+    {
+        "name": "ptasie mleczko",
+        "kCalories": "473"
+    },
+    {
+        "name": "ptysie ze œmietan¹, 1 szt",
+        "kCalories": "100"
+    },
+    {
+        "name": "pyzy z miêsem mro¿one",
+        "kCalories": "200"
+    },
+    {
+        "name": "pyzy ziemniaczane mro¿one",
+        "kCalories": "141"
+    },
+    {
+        "name": "rabarbar",
+        "kCalories": "14"
+    },
+    {
+        "name": "renklody (50 g)",
+        "kCalories": "34"
+    },
+    {
+        "name": "risotto z miêsem i jarzynami",
+        "kCalories": "190"
+    },
+    {
+        "name": "rodzynki",
+        "kCalories": "298"
+    },
+    {
+        "name": "rogal croissant, 1 szt",
+        "kCalories": "282"
+    },
+    {
+        "name": "rum (2 cl)",
+        "kCalories": "75"
+    },
+    {
+        "name": "ry¿ bia³y",
+        "kCalories": "353"
+    },
+    {
+        "name": "ry¿ b³yskawiczny (p³atki)",
+        "kCalories": "361"
+    },
+    {
+        "name": "ry¿ ciemny",
+        "kCalories": "359"
+    },
+    {
+        "name": "ry¿ gotowany na sypko",
+        "kCalories": "137"
+    },
+    {
+        "name": "ry¿ preparowany",
+        "kCalories": "377"
+    },
+    {
+        "name": "rzepa",
+        "kCalories": "24"
+    },
+    {
+        "name": "rzodkiewka (15 g)",
+        "kCalories": "1"
+    },
+    {
+        "name": "salami",
+        "kCalories": "420"
+    },
+    {
+        "name": "salami niemieckie",
+        "kCalories": "335"
+    },
+    {
+        "name": "salceson brunszwicki",
+        "kCalories": "442"
+    },
+    {
+        "name": "salceson czarny",
+        "kCalories": "305"
+    },
+    {
+        "name": "salceson ozorkowy",
+        "kCalories": "389"
+    },
+    {
+        "name": "sa³ata endywia",
+        "kCalories": "17"
+    },
+    {
+        "name": "sa³ata g³owiasta",
+        "kCalories": "12"
+    },
+    {
+        "name": "sa³ata lodowa",
+        "kCalories": "15"
+    },
+    {
+        "name": "sa³ata z tuñczykiem",
+        "kCalories": "272"
+    },
+    {
+        "name": "sa³ata zielona z olejem s³onecznikowym",
+        "kCalories": "118"
+    },
+    {
+        "name": "sa³ata zielona ze œmietan¹",
+        "kCalories": "45"
+    },
+    {
+        "name": "sa³atka œledziowa",
+        "kCalories": "205"
+    },
+    {
+        "name": "sa³atka jarzynowa",
+        "kCalories": "204"
+    },
+    {
+        "name": "sa³atka z bia³ej kapusty",
+        "kCalories": "186"
+    },
+    {
+        "name": "sa³atka z czerwonej kapusty",
+        "kCalories": "99"
+    },
+    {
+        "name": "sa³atka z krabami",
+        "kCalories": "276"
+    },
+    {
+        "name": "sa³atka ziemniaczana",
+        "kCalories": "218"
+    },
+    {
+        "name": "sandacz, czêœci jadalne",
+        "kCalories": "80"
+    },
+    {
+        "name": "Sangria (0,2 cl)",
+        "kCalories": "160"
+    },
+    {
+        "name": "Sangrita (5 cl)",
+        "kCalories": "20"
+    },
+    {
+        "name": "sarnina",
+        "kCalories": "55"
+    },
+    {
+        "name": "schab pieczony",
+        "kCalories": "243"
+    },
+    {
+        "name": "schab wêdzony",
+        "kCalories": "98"
+    },
+    {
+        "name": "seler",
+        "kCalories": "36"
+    },
+    {
+        "name": "ser bia³y chudy",
+        "kCalories": "100"
+    },
+    {
+        "name": "ser bia³y t³usty",
+        "kCalories": "165"
+    },
+    {
+        "name": "ser brie pe³not³usty",
+        "kCalories": "264"
+    },
+    {
+        "name": "ser bryndza",
+        "kCalories": "285"
+    },
+    {
+        "name": "ser camembert",
+        "kCalories": "264"
+    },
+    {
+        "name": "ser cheddar pe³not³usty",
+        "kCalories": "385"
+    },
+    {
+        "name": "ser edamski pe³not³usty",
+        "kCalories": "328"
+    },
+    {
+        "name": "ser edamski t³usty",
+        "kCalories": "288"
+    },
+    {
+        "name": "ser ementaler pe³not³usty",
+        "kCalories": "376"
+    },
+    {
+        "name": "ser ementaler t³usty",
+        "kCalories": "310"
+    },
+    {
+        "name": "ser gorgonzola pleœniowy",
+        "kCalories": "376"
+    },
+    {
+        "name": "ser gouda pe³not³usty ",
+        "kCalories": "324"
+    },
+    {
+        "name": "ser gouda t³usty",
+        "kCalories": "284"
+    },
+    {
+        "name": "ser grecki feta",
+        "kCalories": "250"
+    },
+    {
+        "name": "ser mascarpone",
+        "kCalories": "480"
+    },
+    {
+        "name": "ser mozzarella pe³not³usty",
+        "kCalories": "286"
+    },
+    {
+        "name": "ser mozzarella t³usty",
+        "kCalories": "257"
+    },
+    {
+        "name": "ser myœliwski pe³not³usty",
+        "kCalories": "294"
+    },
+    {
+        "name": "ser parmezan",
+        "kCalories": "396"
+    },
+    {
+        "name": "ser rokpol pleœniowy",
+        "kCalories": "353"
+    },
+    {
+        "name": "ser roquefort pleœniowy",
+        "kCalories": "376"
+    },
+    {
+        "name": "ser salami t³usty",
+        "kCalories": "300"
+    },
+    {
+        "name": "ser sojowy tofu",
+        "kCalories": "72"
+    },
+    {
+        "name": "ser topiony, 1 ro¿ek",
+        "kCalories": "65"
+    },
+    {
+        "name": "ser tostowy w plasterkach",
+        "kCalories": "340"
+    },
+    {
+        "name": "ser trapisów pe³not³usty",
+        "kCalories": "311"
+    },
+    {
+        "name": "ser trapisów t³usty",
+        "kCalories": "280"
+    },
+    {
+        "name": "ser tyl¿ycki pe³not³usty",
+        "kCalories": "320"
+    },
+    {
+        "name": "ser tyl¿ycki t³usty",
+        "kCalories": "301"
+    },
+    {
+        "name": "serdelki drobiwe",
+        "kCalories": "227"
+    },
+    {
+        "name": "sernik",
+        "kCalories": "273"
+    },
+    {
+        "name": "serek homogenizowany",
+        "kCalories": "110"
+    },
+    {
+        "name": "serek brzoskwiniowy Danone",
+        "kCalories": "148"
+    },
+    {
+        "name": "sernik wiedeñski",
+        "kCalories": "480"
+    },
+    {
+        "name": "serwatka, 1 szklanka (250 ml)",
+        "kCalories": "60"
+    },
+    {
+        "name": "sezam",
+        "kCalories": "582"
+    },
+    {
+        "name": "sherry wytrawne (5 cl)",
+        "kCalories": "60"
+    },
+    {
+        "name": "skórka pomarañczowa, cytrynowa",
+        "kCalories": "79"
+    },
+    {
+        "name": "s³onina œwie¿a",
+        "kCalories": "764"
+    },
+    {
+        "name": "smalec",
+        "kCalories": "900"
+    },
+    {
+        "name": "soczewica gotowana",
+        "kCalories": "106"
+    },
+    {
+        "name": "soczewica sucha",
+        "kCalories": "354"
+    },
+    {
+        "name": "soja gotowana",
+        "kCalories": "130"
+    },
+    {
+        "name": "soja sucha",
+        "kCalories": "442"
+    },
+    {
+        "name": "sok pomidorowy (250 ml)",
+        "kCalories": "63"
+    },
+    {
+        "name": "soki owocowe nisko i œrednios³odzone (250 ml)",
+        "kCalories": "340"
+    },
+    {
+        "name": "sos sojowy, 1 ³y¿ka",
+        "kCalories": "10"
+    },
+    {
+        "name": "sos tatarski, 1 ³y¿ka",
+        "kCalories": "33"
+    },
+    {
+        "name": "sos winegret, 1 ³y¿ka",
+        "kCalories": "2"
+    },
+    {
+        "name": "sól kuchenna",
+        "kCalories": "0"
+    },
+    {
+        "name": "strudel jab³kowy (200 g)",
+        "kCalories": "320"
+    },
+    {
+        "name": "surówka z cykorii i jab³ek z olejem",
+        "kCalories": "168"
+    },
+    {
+        "name": "surówka z pomidorów",
+        "kCalories": "26"
+    },
+    {
+        "name": "surówka z porów i jab³ek z olejem",
+        "kCalories": "156"
+    },
+    {
+        "name": "surówka z rzodkiewki ze œmietan¹",
+        "kCalories": "94"
+    },
+    {
+        "name": "surówka z selera",
+        "kCalories": "80"
+    },
+    {
+        "name": "szampan s³odki, 1 kieliszek (0,1 l)",
+        "kCalories": "85"
+    },
+    {
+        "name": "szampan wytrawny, 1 kieliszek (0,1 l)",
+        "kCalories": "75"
+    },
+    {
+        "name": "szczaw",
+        "kCalories": "33"
+    },
+    {
+        "name": "szczupak, czêœci jadalne",
+        "kCalories": "78"
+    },
+    {
+        "name": "szczypiorek (30 g)",
+        "kCalories": "12"
+    },
+    {
+        "name": "szparagi",
+        "kCalories": "12"
+    },
+    {
+        "name": "szpik",
+        "kCalories": "822"
+    },
+    {
+        "name": "szpinak œwie¿y",
+        "kCalories": "16"
+    },
+    {
+        "name": "szpinak zasma¿any",
+        "kCalories": "94"
+    },
+    {
+        "name": "szprot wêdzony",
+        "kCalories": "143"
+    },
+    {
+        "name": "szprot, czêœci jadalne",
+        "kCalories": "156"
+    },
+    {
+        "name": "szynka drobiowa",
+        "kCalories": "120"
+    },
+    {
+        "name": "szynka mielona, konserwowa",
+        "kCalories": "143"
+    },
+    {
+        "name": "szynkowa kie³basa",
+        "kCalories": "154"
+    },
+    {
+        "name": "œledŸ marynowany",
+        "kCalories": "124"
+    },
+    {
+        "name": "œledŸ w oleju, konserwa",
+        "kCalories": "341"
+    },
+    {
+        "name": "œledŸ w œmietanie",
+        "kCalories": "200"
+    },
+    {
+        "name": "œledŸ solony",
+        "kCalories": "124"
+    },
+    {
+        "name": "œlimaki",
+        "kCalories": "99"
+    },
+    {
+        "name": "œliwki suszone",
+        "kCalories": "265"
+    },
+    {
+        "name": "œliwki œwie¿e (160 g)",
+        "kCalories": "102"
+    },
+    {
+        "name": "œmietana 9% t³uszczu",
+        "kCalories": "109"
+    },
+    {
+        "name": "œmietana 12% t³uszczu",
+        "kCalories": "136"
+    },
+    {
+        "name": "œmietana 18% t³uszczu",
+        "kCalories": "186"
+    },
+    {
+        "name": "œmietana 30% t³uszczu",
+        "kCalories": "290"
+    },
+    {
+        "name": "tatar",
+        "kCalories": "128"
+    },
+    {
+        "name": "tofu",
+        "kCalories": "72"
+    },
+    {
+        "name": "tonik Schweppes (250 ml)",
+        "kCalories": "68"
+    },
+    {
+        "name": "torcik czekoladowy",
+        "kCalories": "401"
+    },
+    {
+        "name": "torcik waflowy",
+        "kCalories": "580"
+    },
+    {
+        "name": "tort orzechowo-œmietankowy",
+        "kCalories": "475"
+    },
+    {
+        "name": "tran",
+        "kCalories": "900"
+    },
+    {
+        "name": "trufle",
+        "kCalories": "434"
+    },
+    {
+        "name": "truskawki",
+        "kCalories": "35"
+    },
+    {
+        "name": "truskawki z bit¹ œmietan¹",
+        "kCalories": "132"
+    },
+    {
+        "name": "tuñczyk w oleju, konserwa",
+        "kCalories": "213"
+    },
+    {
+        "name": "tuñczyk w sosie w³asnym, konserwa",
+        "kCalories": "131"
+    },
+    {
+        "name": "wafle",
+        "kCalories": "457"
+    },
+    {
+        "name": "warzywa suszone",
+        "kCalories": "321"
+    },
+    {
+        "name": "wermuth s³odki (5 cl)",
+        "kCalories": "85"
+    },
+    {
+        "name": "wermuth wytrawny (5 cl)",
+        "kCalories": "60"
+    },
+    {
+        "name": "wêgorz wêdzony",
+        "kCalories": "227"
+    },
+    {
+        "name": "wêgorz, czêœci jadalne",
+        "kCalories": "281"
+    },
+    {
+        "name": "whisky Bourbon (4 cl)",
+        "kCalories": "115"
+    },
+    {
+        "name": "whisky Scotch (4 cl)",
+        "kCalories": "100"
+    },
+    {
+        "name": "wieprzowa pieczeñ",
+        "kCalories": "279"
+    },
+    {
+        "name": "wieprzowa rolada",
+        "kCalories": "410"
+    },
+    {
+        "name": "wieprzowa w¹tróbka sma¿ona na oleju",
+        "kCalories": "244"
+    },
+    {
+        "name": "wieprzowa w¹tróbka surowa ",
+        "kCalories": "116"
+    },
+    {
+        "name": "wieprzowe bitki",
+        "kCalories": "197"
+    },
+    {
+        "name": "wieprzowe nerki surowe",
+        "kCalories": "104"
+    },
+    {
+        "name": "wieprzowe nó¿ki, galaretka",
+        "kCalories": "206"
+    },
+    {
+        "name": "wieprzowe serca",
+        "kCalories": "96"
+    },
+    {
+        "name": "wieprzowe ¿eberka duszone z cebul¹",
+        "kCalories": "213"
+    },
+    {
+        "name": "wieprzowe ¿eberka surowe",
+        "kCalories": "242"
+    },
+    {
+        "name": "wieprzowina bez koœci",
+        "kCalories": "264"
+    },
+    {
+        "name": "wieprzowina gotowana",
+        "kCalories": "372"
+    },
+    {
+        "name": "wieprzowina w sosie w³asnym",
+        "kCalories": "229"
+    },
+    {
+        "name": "wieprzowina boczek surowy",
+        "kCalories": "517"
+    },
+    {
+        "name": "wieprzowina, golonka ze skór¹",
+        "kCalories": "253"
+    },
+    {
+        "name": "wieprzowina, karkówka",
+        "kCalories": "201"
+    },
+    {
+        "name": "wieprzowina, ³opatka chuda",
+        "kCalories": "182"
+    },
+    {
+        "name": "wieprzowina, ³opatka t³usta",
+        "kCalories": "255"
+    },
+    {
+        "name": "wieprzowina, podgardle",
+        "kCalories": "577"
+    },
+    {
+        "name": "wieprzowina, schab",
+        "kCalories": "119"
+    },
+    {
+        "name": "wieprzowina, szynka chuda",
+        "kCalories": "177"
+    },
+    {
+        "name": "wieprzowina, szynka t³usta",
+        "kCalories": "254"
+    },
+    {
+        "name": "wieprzowina, zrazowa górna",
+        "kCalories": "179"
+    },
+    {
+        "name": "wieprzowina, zrazowa przednia",
+        "kCalories": "198"
+    },
+    {
+        "name": "wieprzowina, ¿eberka",
+        "kCalories": "242"
+    },
+    {
+        "name": "wieprzowy mózg",
+        "kCalories": "134"
+    },
+    {
+        "name": "wieprzowina, schab surowy",
+        "kCalories": "119"
+    },
+    {
+        "name": "wieprzowy stek",
+        "kCalories": "478"
+    },
+    {
+        "name": "winiak (2 cl)",
+        "kCalories": "48"
+    },
+    {
+        "name": "wino grzane z korzeniami (250 ml)",
+        "kCalories": "190"
+    },
+    {
+        "name": "winogrona",
+        "kCalories": "68"
+    },
+    {
+        "name": "wiórki kokosowe",
+        "kCalories": "346"
+    },
+    {
+        "name": "wiœnie w czekoladzie",
+        "kCalories": "446"
+    },
+    {
+        "name": "wiœnie (85 g)",
+        "kCalories": "44"
+    },
+    {
+        "name": "wiœniówka (2 cl)",
+        "kCalories": "47"
+    },
+    {
+        "name": "w³oszczyzna",
+        "kCalories": "38"
+    },
+    {
+        "name": "woda mineralna",
+        "kCalories": "0"
+    },
+    {
+        "name": "woda sodowa",
+        "kCalories": "0"
+    },
+    {
+        "name": "wo³owa pieczeñ z polêdwicy",
+        "kCalories": "170"
+    },
+    {
+        "name": "wo³owa polêdwica",
+        "kCalories": "253"
+    },
+    {
+        "name": "wo³owa w¹tróbka surowa",
+        "kCalories": "123"
+    },
+    {
+        "name": "wo³owe bitki",
+        "kCalories": "106"
+    },
+    {
+        "name": "wo³owe nerki surowe",
+        "kCalories": "136"
+    },
+    {
+        "name": "wo³owe p³uca",
+        "kCalories": "82"
+    },
+    {
+        "name": "wo³owina gotowana",
+        "kCalories": "200"
+    },
+    {
+        "name": "wo³owina w sosie w³asnym",
+        "kCalories": "142"
+    },
+    {
+        "name": "wo³owina, antrykot",
+        "kCalories": "156"
+    },
+    {
+        "name": "wo³owina, goleñ",
+        "kCalories": "67"
+    },
+    {
+        "name": "wo³owina, karkówka chuda",
+        "kCalories": "95"
+    },
+    {
+        "name": "wo³owina, karkówka œredniot³usta",
+        "kCalories": "131"
+    },
+    {
+        "name": "wo³owina, mostek",
+        "kCalories": "204"
+    },
+    {
+        "name": "wo³owina, polêdwica",
+        "kCalories": "110"
+    },
+    {
+        "name": "wo³owina, rostbef",
+        "kCalories": "122"
+    },
+    {
+        "name": "wo³owina, rozbratel",
+        "kCalories": "124"
+    },
+    {
+        "name": "wo³owina, szponder chudy",
+        "kCalories": "105"
+    },
+    {
+        "name": "wo³owina, szponder t³usty",
+        "kCalories": "259"
+    },
+    {
+        "name": "wo³owina, zrazowa dolna",
+        "kCalories": "120"
+    },
+    {
+        "name": "wo³owina, zrazowa górna",
+        "kCalories": "111"
+    },
+    {
+        "name": "wo³owy gulasz",
+        "kCalories": "149"
+    },
+    {
+        "name": "wo³owy ³ój",
+        "kCalories": "896"
+    },
+    {
+        "name": "wo³owy mózg",
+        "kCalories": "121"
+    },
+    {
+        "name": "wo³owy ogon surowy",
+        "kCalories": "68"
+    },
+    {
+        "name": "wo³owy ozór surowy",
+        "kCalories": "178"
+    },
+    {
+        "name": "wódka czysta, 1 kieliszek (40 ml)",
+        "kCalories": "112"
+    },
+    {
+        "name": "wódka (2 cl)",
+        "kCalories": "35-55"
+    },
+    {
+        "name": "zaj¹c tuszka",
+        "kCalories": "81"
+    },
+    {
+        "name": "zarodki pszenne",
+        "kCalories": "377"
+    },
+    {
+        "name": "ziemniaczane puree w proszku Uncle Ben's",
+        "kCalories": "62"
+    },
+    {
+        "name": "ziemniak (80 g)",
+        "kCalories": "48"
+    },
+    {
+        "name": "ziemniaki",
+        "kCalories": "60"
+    },
+    {
+        "name": "ziemniaki puree",
+        "kCalories": "89"
+    },
+    {
+        "name": "ziemniaki z wody okraszone mas³em",
+        "kCalories": "106"
+    },
+    {
+        "name": "zupa szpinakowa z ziemniakami",
+        "kCalories": "42"
+    },
+    {
+        "name": "zupa cebulowa",
+        "kCalories": "46"
+    },
+    {
+        "name": "zupa fasolowa",
+        "kCalories": "72"
+    },
+    {
+        "name": "zupa grochowa",
+        "kCalories": "75"
+    },
+    {
+        "name": "zupa grzybowa zabielana",
+        "kCalories": "30"
+    },
+    {
+        "name": "zupa jarzynowa",
+        "kCalories": "33"
+    },
+    {
+        "name": "zupa jarzynowa zabielana",
+        "kCalories": "48"
+    },
+    {
+        "name": "zupa kalafiorowa",
+        "kCalories": "30"
+    },
+    {
+        "name": "zupa krupnik",
+        "kCalories": "81"
+    },
+    {
+        "name": "zupa ogórkowa zabielana",
+        "kCalories": "43"
+    },
+    {
+        "name": "zupa pomidorowa z ry¿em",
+        "kCalories": "38"
+    },
+    {
+        "name": "zupa pomidorowa na koncentracie",
+        "kCalories": "14"
+    },
+    {
+        "name": "zupa pomidorowa z makaronem",
+        "kCalories": "36"
+    },
+    {
+        "name": "zupa pomidorowa zabielana",
+        "kCalories": "19"
+    },
+    {
+        "name": "zupa szczawiowa",
+        "kCalories": "41"
+    },
+    {
+        "name": "zupa-krem z zielonego groszku",
+        "kCalories": "64"
+    },
+    {
+        "name": "¿abie udka",
+        "kCalories": "73"
+    },
+    {
+        "name": "¿eberka wieprzowe duszone z\n      cebul¹",
+        "kCalories": "213"
+    },
+    {
+        "name": "¿eberka wieprzowe surowe",
+        "kCalories": "242"
+    },
+    {
+        "name": "¿eberka z rusztu po amerykañsku",
+        "kCalories": "260"
+    },
+    {
+        "name": "¿elatyna, 1 ³y¿ka (10 g)",
+        "kCalories": "34"
+    },
+    {
+        "name": "¿elki miœki, cukierki",
+        "kCalories": "390"
+    },
+    {
+        "name": "¿o³¹dki drobiowe",
+        "kCalories": "100"
+    },
+    {
+        "name": "¿ó³tko z 1 jajka",
+        "kCalories": "70"
+    },
+    {
+        "name": "¿urawiny",
+        "kCalories": "49"
+    },
+    {
+        "name": "¿urek, 1 talerz (250 ml)",
+        "kCalories": "200"
+    }
+])
