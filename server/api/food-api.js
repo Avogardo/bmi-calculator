@@ -4,7 +4,7 @@ const Dish = require("../models/dish-model");
 module.exports = app => { // receiving "app" instance
   app.get('/', async (req, res) => {
     try {
-      const foods = await Food.find({}).sort({ _id:-1 });
+      const foods = await Food.find({});
       res.send({
         posts: foods,
       });
