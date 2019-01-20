@@ -1,14 +1,18 @@
 <template>
   <div class="posts">
     <h1>Login</h1>
-    This is a home page.
+    <h2>Systemy telemedyczne - projekt (prow. Karol Puchała)</h2>
+    <p><b>Temat:</b> Aplikacja webowa ułatwiająca zdrowe odżywianie</p>
+    <p>Dominika Pałka 219292</p>
+    <p>Jakub Wolny 219293</p>
 
-    <button @click="onClick">show user</button>
-    <a href="http://localhost:8081/auth/logout">Log out</a>
-    <a href="http://localhost:8081/auth/google">Google+</a>
 
-    <h2>Example response from server:</h2>
-    <md-button class="md-raised md-primary">Primary</md-button>
+    <a href="http://localhost:8081/auth/logout" v-if="loggedUser">
+      <md-button class="md-raised">Log out</md-button>
+    </a>
+    <a href="http://localhost:8081/auth/google" v-if="!loggedUser">
+      <md-button class="md-raised md-primary">Continue with google</md-button>
+    </a>
   </div>
 </template>
 
@@ -26,14 +30,24 @@
 </style>
 
 <script>
-  import CalculatorService from '@/services/CalculatorService'
+  import CalculatorService from '@/services/CalculatorService';
+  import { loggedUser } from '../helper';
+
   export default {
     name: 'Login',
-    methods: {
-      async onClick () {
-        const user = await CalculatorService.fetchUser();
-        console.log(user.data);
-      }
+    data() {
+      return {
+        loggedUser,
+      };
     },
-  }
+    mounted() {
+      this.getUser();
+    },
+    methods: {
+      async getUser() {
+        const user = await CalculatorService.fetchUser();
+        this.loggedUser = user.data.user;
+      },
+    },
+  };
 </script>
