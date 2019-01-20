@@ -1,6 +1,6 @@
 <template>
-  <div>
-    <md-card>
+  <div v-if="isContentLoaded">
+    <md-card v-if="user.gender && user.height && user.weight && user.neededDailyCal">
       <md-card-header>
         <div class="md-title">Your BMI ratio is {{ bmi }}</div>
         <div class="md-subhead">{{ description.title }}</div>
@@ -33,11 +33,21 @@
         </md-list>
       </md-card-content>
     </md-card>
+
+    <md-card v-if="!(user.gender && user.height && user.weight && user.neededDailyCal)">
+      <md-empty-state
+        md-icon="person"
+        md-label="Update your profile first"
+        md-description="Updating your profile, you'll be able to get access to forecast assistance and observing your stats like weight or daily caloric demand">
+        <md-button @click="goToUserProfile()" class="md-primary md-raised">Go to my profile settings</md-button>
+      </md-empty-state>
+    </md-card>
   </div>
 </template>
 
 <script>
   import CalculatorService from '@/services/CalculatorService';
+  import router from '../router';
   import getCalculateNeededDailyCal, { getBurnedCalories } from '../helper';
 
   export default {
@@ -59,6 +69,7 @@
           },
         },
         burnedCalories: 0,
+        isContentLoaded: false,
       };
     },
     mounted() {
@@ -86,6 +97,7 @@
         this.calculateBmi(userData);
         this.calculateNutritionalValues(userData);
         this.description.neededDailyCal = getCalculateNeededDailyCal(userData);
+        this.isContentLoaded = true;
       },
       calculateNutritionalValues({ weight }) {
         this.description.nutritionalValues.protein = Math.round(weight / 1.5 * 10) / 10;
@@ -193,7 +205,10 @@ Ekstremalnie wysoka masa ciała naraża cię na choroby zwyrodnieniowe stawów, 
 Leczenie otyłości III stopnia należy rozpocząć do wizyty u specjalisty. Musisz liczyć się z koniecznością niemal całkowitej zmiany codziennych nawyków.`;
             break;
         }
-      }
+      },
+      goToUserProfile() {
+        router.push('/my-profile');
+      },
     },
-  }
+  };
 </script>

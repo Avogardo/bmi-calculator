@@ -61,16 +61,16 @@
           yAxes: [{
             stacked: true,
             ticks: {
-              beginAtZero: true
-            }
+              beginAtZero: true,
+            },
           }],
           xAxes: [{
             stacked: true,
             ticks: {
-              beginAtZero: true
-            }
-          }]
-        }}
+              beginAtZero: true,
+            },
+          }],
+        }},
     }),
     mounted() {
       this.getUser();
