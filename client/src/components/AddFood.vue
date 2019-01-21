@@ -1,6 +1,6 @@
 <template>
   <div>
-    <md-dialog-title>Preferences</md-dialog-title>
+    <md-dialog-title>Add food</md-dialog-title>
 
     <md-field
       v-for="(food, index) in Object.keys(foods)"

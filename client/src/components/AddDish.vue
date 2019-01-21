@@ -1,6 +1,6 @@
 <template>
   <div>
-    <md-dialog-title>Preferences</md-dialog-title>
+    <md-dialog-title>Add dish</md-dialog-title>
 
     <md-field>
       <label>Type your {{ Object.keys(dish)[0] }}...</label>

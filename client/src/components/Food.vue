@@ -24,7 +24,7 @@
       </md-card>
 
       <md-button v-if="!isAddDishMode" class="md-primary md-raised" @click="showDialog = true">
-        Show Dialog
+        Add food
       </md-button>
       <md-button v-if="selected.length && !isAddDishMode" @click="onRemove()" class="md-accent">Remove</md-button>
     </div>
