@@ -65,7 +65,10 @@
 </template>
 
 <style lang="scss" scoped>
-
+  .md-dialog {
+    max-width: 768px;
+    padding: 20px;
+  }
 </style>
 
 <script>

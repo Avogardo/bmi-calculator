@@ -84,6 +84,7 @@
 
   .md-dialog {
     max-width: 768px;
+    padding: 20px;
   }
 
   .md-list {
