@@ -5,6 +5,8 @@ const bodyParser = require('body-parser');
 const passportSetup = require('./config/passport-setup');
 const cors = require('cors');
 const morgan = require('morgan');
+const http = require('http');
+const socketIO = require('socket.io');
 const mongoose = require('mongoose');
 const keys = require('./config/keys');
 
@@ -12,6 +14,25 @@ const app = express();
 app.use(morgan('combined'));
 app.use(bodyParser.json());
 app.use(cors());
+
+const server = http.createServer(app);
+const io = socketIO(server);
+
+io.on('connection', socket => {
+  console.log('User connected');
+
+  socket.on('change color', (color) => {
+    console.log('Color Changed to: ', color);
+    io.sockets.emit('change color', color);
+  });
+
+  socket.on('disconnect', () => {
+    console.log('user disconnected');
+  });
+});
+
+
+server.listen(8082, () => console.log(`Listening on port ${8082}`));
 
 // set up session cookies
 app.use(cookieSession({

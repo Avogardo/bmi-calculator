@@ -27,6 +27,9 @@
         Add food
       </md-button>
       <md-button v-if="selected.length && !isAddDishMode" @click="onRemove()" class="md-accent">Remove</md-button>
+      <md-button @click="send()">Change color</md-button>
+      <md-button @click="send('blue')">blue</md-button>
+      <md-button @click="send('red')">red</md-button>
     </div>
 
     <md-progress-spinner v-if="!isContentLoaded" md-mode="indeterminate"></md-progress-spinner>
@@ -84,7 +87,8 @@
 <script>
   import CalculatorService from '@/services/CalculatorService';
   import AddFood from '@/components/AddFood';
-  import virtualList from 'vue-virtual-scroll-list'
+  import virtualList from 'vue-virtual-scroll-list';
+  import socketIOClient from 'socket.io-client';
 
   export default {
     name: 'Food',
@@ -104,10 +108,18 @@
           kCalories: 0,
         },
         isContentLoaded: false,
+        endpoint: "http://localhost:8082",
+        color: 'white',
       };
     },
     mounted() {
       this.getPosts();
+
+      const socket = socketIOClient(this.endpoint);
+      socket.on('change color', (color) => {
+        console.log(123)
+        document.querySelector('.md-toolbar').style.backgroundColor = color;
+      });
     },
     methods: {
       async getPosts() {
@@ -146,6 +158,13 @@
           await this.getPosts();
         }
       },
+      send(color = 'white') {
+        const socket = socketIOClient(this.endpoint);
+        socket.emit('change color', color);
+      },
+      setColor(color) {
+        this.color = color;
+      }
     },
   };
 </script>
