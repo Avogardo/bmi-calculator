@@ -1,6 +1,6 @@
 <template>
   <div class="posts" v-if="isContentLoaded">
-    <md-card v-if="user.gender && user.height && user.weight && user.neededDailyCal">
+    <md-card class="chart-wrapper" v-if="user.gender && user.height && user.weight && user.neededDailyCal">
       <md-card-header>
         <div class="md-subhead">Summary</div>
       </md-card-header>
@@ -25,7 +25,11 @@
 </template>
 
 <style lang="scss" scoped>
-
+.chart-wrapper {
+      max-width: 900px;
+    margin-left: auto;
+    margin-right: auto;
+}
 </style>
 
 <script>
