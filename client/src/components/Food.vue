@@ -88,7 +88,7 @@
   import CalculatorService from '@/services/CalculatorService';
   import AddFood from '@/components/AddFood';
   import virtualList from 'vue-virtual-scroll-list';
-  import socketIOClient from 'socket.io-client';
+  import api from '../services/Api';
 
   export default {
     name: 'Food',
@@ -108,16 +108,13 @@
           kCalories: 0,
         },
         isContentLoaded: false,
-        endpoint: "http://localhost:8082",
         color: 'white',
       };
     },
     mounted() {
       this.getPosts();
 
-      const socket = socketIOClient(this.endpoint);
-      socket.on('change color', (color) => {
-        console.log(123)
+      api.socket.on('change color', (color) => {
         document.querySelector('.md-toolbar').style.backgroundColor = color;
       });
     },
@@ -159,8 +156,7 @@
         }
       },
       send(color = 'white') {
-        const socket = socketIOClient(this.endpoint);
-        socket.emit('change color', color);
+        api.socket.emit('change color', color);
       },
       setColor(color) {
         this.color = color;
