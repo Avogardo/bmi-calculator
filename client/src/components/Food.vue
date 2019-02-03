@@ -117,6 +117,9 @@
       api.socket.on('change color', (color) => {
         document.querySelector('.md-toolbar').style.backgroundColor = color;
       });
+      api.socket.on('foodSaved', () => {
+        this.getPosts();
+      });
     },
     methods: {
       async getPosts() {
@@ -137,11 +140,7 @@
       },
       async onAdd() {
         this.closeAddDialog();
-        const response = await CalculatorService.addFood(this.foods);
-        if (response.data.success) {
-          this.showAddSnackbar = true;
-          await this.getPosts();
-        }
+        api.socket.emit('addFood', this.foods);
       },
       async onRemove() {
         const foodIds = {

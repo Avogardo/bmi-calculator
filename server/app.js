@@ -8,6 +8,7 @@ const morgan = require('morgan');
 const http = require('http');
 const socketIO = require('socket.io');
 const mongoose = require('mongoose');
+const Food = require("./models/food-model");
 const keys = require('./config/keys');
 
 const app = express();
@@ -24,6 +25,21 @@ io.on('connection', socket => {
   socket.on('change color', (color) => {
     console.log('Color Changed to: ', color);
     io.sockets.emit('change color', color);
+  });
+
+  socket.on('addFood', ({name, kCalories}) => {
+    console.log(name, kCalories);
+
+    const newPost = new Food({
+      name,
+      kCalories,
+    });
+    newPost.save((error) => {
+      if (error) {
+        console.log(error);
+      }
+      io.sockets.emit('foodSaved');
+    });
   });
 
   socket.on('disconnect', () => {
